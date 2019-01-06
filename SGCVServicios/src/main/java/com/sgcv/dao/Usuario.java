@@ -6,15 +6,14 @@
 package com.sgcv.dao;
 
 import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -22,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Ernesto
  */
 @Entity
-@Table(name = "usuario")
+@Table( name = "usuario")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
@@ -34,17 +33,13 @@ public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Basic(optional = false)
-    @NotNull
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
-    @Size(max = 1)
     @Column(name = "nombre")
     private String nombre;
-    @Size(max = 1)
     @Column(name = "correo")
     private String correo;
-    @Size(max = 1)
     @Column(name = "clave")
     private String clave;
 

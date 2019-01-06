@@ -5,13 +5,14 @@
  */
 package com.sgcv.ws;
 
+import com.sgcv.bean.GestorUsuariosBean;
+import com.sgcv.dto.UsuarioDTO;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
 import javax.ws.rs.Produces;
-import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -24,7 +25,7 @@ public class GestorUsuariosWS {
 
     @Context
     private UriInfo context;
-
+    
     /**
      * Creates a new instance of GestorUsuariosWS
      */
@@ -33,21 +34,35 @@ public class GestorUsuariosWS {
 
     /**
      * Retrieves representation of an instance of com.sgcv.ws.GestorUsuariosWS
+     * @param usuario
      * @return an instance of java.lang.String
      */
-    @GET
+    @POST
+    @Path("insertarUsuario")
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
-        //TODO return proper representation object
-        throw new UnsupportedOperationException();
+    public String insertarUsuario(UsuarioDTO usuario) {
+        String respuesta;
+        GestorUsuariosBean gestor=new GestorUsuariosBean();
+        respuesta = gestor.insertaUsuario(usuario);
+        return respuesta;
     }
-
-    /**
-     * PUT method for updating or creating an instance of GestorUsuariosWS
-     * @param content representation for the resource
-     */
-    @PUT
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void putJson(String content) {
+    
+    @POST
+    @Path("modificaUsuario")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String modificaUsuario(UsuarioDTO usuario) {
+        //TODO return proper representation object
+        String respuesta;
+        GestorUsuariosBean gestor=new GestorUsuariosBean();
+        respuesta = gestor.modificaUsuario(usuario);
+        return respuesta;
+    }
+    
+    @POST
+    @Path("eliminarUsuario")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String eliminarUsuario(String idUsuario) {
+        //TODO return proper representation object
+        return "";
     }
 }
