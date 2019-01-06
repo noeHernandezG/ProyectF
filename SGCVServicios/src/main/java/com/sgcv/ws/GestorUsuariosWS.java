@@ -65,4 +65,14 @@ public class GestorUsuariosWS {
         //TODO return proper representation object
         return "";
     }
+    
+    @POST
+    @Path("login")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String login(UsuarioDTO usuario) {
+        String respuesta;
+        GestorUsuariosBean gestor=new GestorUsuariosBean();
+        respuesta = gestor.login(usuario);
+        return respuesta;
+    }
 }

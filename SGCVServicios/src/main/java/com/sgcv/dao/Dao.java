@@ -5,11 +5,13 @@
  */
 package com.sgcv.dao;
 
+import com.sgcv.utils.CONSTANTE;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 /**
  *
@@ -56,20 +58,31 @@ public class Dao<T> {
         return false;
     }   
     
-//    public T consultaQuery (String query){
-//        
-//        try{
-//            createEMF();
-////        Object resultado = em.createQuery(query).getResultList();
-////        List<T> listEntity=(List<T>) resultado;
-//        return (T) em.createQuery(query).getSingleResult();
-//        }catch(Exception e){
-//            e.printStackTrace();
-//        }finally{
-//            closeEMF();
-//        }
-//        
-//    }
+    public List<T> consultaQueryByParametros (String query, List<Parametros> parametros){
+        List<T> listadoEntidad= null;
+        try{
+            createEMF();
+            
+            Query q = em.createNamedQuery(query);
+            for(Parametros parametro: parametros){
+                if (CONSTANTE.CADENA.equals(parametro.getTipo())) {
+                    q.setParameter(parametro.getNombre(),parametro.getValor());
+                }
+                if (CONSTANTE.NUMERO.equals(parametro.getTipo())) {
+                    q.setParameter(parametro.getNombre(), Integer.parseInt(parametro.getValor()));
+                }
+            }
+//        Object resultado = em.createQuery(query).getResultList();
+//        List<T> listEntity=(List<T>) resultado;
+            Object resultado = q.getResultList();
+            listadoEntidad = (List<T>) resultado;
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            closeEMF();
+        }
+        return listadoEntidad;
+    }
     
     public boolean actualiza(T entity){
         boolean result = true;
