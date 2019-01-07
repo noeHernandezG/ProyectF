@@ -42,7 +42,7 @@ public class Dao<T> {
     
     
     public boolean inserta(T entity){
-        
+        createEMF();
         try{
             em.getTransaction().begin();
             em.persist(entity);

@@ -6,9 +6,9 @@ use DB_Ferruz;
 drop table usuario;
 create table usuario(
 	id int IDENTITY(1,1) primary key,
-	nombre varchar,
-	correo varchar, 
-	clave varchar,
+	nombre varchar(100),
+	correo varchar(100), 
+	clave varchar(100),
 )
 create table persona(
 	id_persona int IDENTITY(1,1) primary key,
