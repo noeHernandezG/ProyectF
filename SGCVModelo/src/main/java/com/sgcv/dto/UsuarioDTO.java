@@ -10,7 +10,7 @@ package com.sgcv.dto;
  * @author Ernesto
  */
 public class UsuarioDTO {
-    private static final long serialVersionUID = 0L;
+//    private static final long serialVersionUID = 0L;
     private Integer id;
     private String nombre;
     private String correo;
