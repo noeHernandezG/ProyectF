@@ -4,8 +4,9 @@ create database DB_Ferruz;
 
 use DB_Ferruz;
 drop table usuario;
+select * from usuario;
 create table usuario(
-	id int IDENTITY(1,1) primary key,
+	id int primary key,
 	nombre varchar,
 	correo varchar, 
 	clave varchar,

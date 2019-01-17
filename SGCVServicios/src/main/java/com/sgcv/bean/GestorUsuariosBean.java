@@ -86,6 +86,6 @@ public class GestorUsuariosBean {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return "";
+        return "Se encontraron "+usuarios.size();
     }
 }
