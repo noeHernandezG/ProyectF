@@ -6,10 +6,10 @@ use DB_Ferruz;
 drop table usuario;
 select * from usuario;
 create table usuario(
-	id int primary key,
-	nombre varchar,
-	correo varchar, 
-	clave varchar,
+	id int IDENTITY(1,1) primary key,
+	nombre varchar(100),
+	correo varchar(100), 
+	clave varchar(100)
 )
 create table persona(
 	id_persona int IDENTITY(1,1) primary key,
