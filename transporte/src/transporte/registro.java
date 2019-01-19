@@ -218,6 +218,9 @@ public class registro extends javax.swing.JFrame {
                 usuarioDTO.setNombre(nameReg.getText());
                 if(usuarios.registrarUsuario(usuarioDTO).contains("200 true")){
                     JOptionPane.showMessageDialog(this, "El usuario se registro correctamente");
+                    inicio ini=new inicio();
+                    ini.setVisible(true);
+                    this.setVisible(false);
                 }else{
                     JOptionPane.showMessageDialog(this, "No se pudo registrar al usuario");
                 }

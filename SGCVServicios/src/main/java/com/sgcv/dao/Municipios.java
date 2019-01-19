@@ -32,11 +32,11 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Municipios.findAll", query = "SELECT m FROM Municipios m")
     , @NamedQuery(name = "Municipios.findById", query = "SELECT m FROM Municipios m WHERE m.id = :id")
-    , @NamedQuery(name = "Municipios.findByMunicipio", query = "SELECT m FROM Municipios m WHERE m.municipio = :municipio")
-    , @NamedQuery(name = "Municipios.findByIdEstado", query = 
-            "SELECT m.id, m.municipio FROM Municipios m "
-          + "INNER JOIN EstadosMunicipios em on m.id=em.municipiosId "
-          + "INNER JOIN Estados e on em.estadosId=e.id")})
+    })
+//    , @NamedQuery(name = "Municipios.findByIdEstado", query = 
+//            "SELECT m.id, m.municipio FROM Municipios m "
+//          + "INNER JOIN EstadosMunicipios em on m.id=em.municipiosId "
+//          + "INNER JOIN Estados e on em.estadosId=e.id")})
 public class Municipios implements Serializable {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "municipiosId", fetch = FetchType.LAZY)
