@@ -3,8 +3,7 @@
 create database DB_Ferruz;
 
 use DB_Ferruz;
-drop table usuario;
-select * from usuario;
+
 create table usuario(
 	id int IDENTITY(1,1) primary key,
 	nombre varchar(100),
@@ -13,42 +12,46 @@ create table usuario(
 )
 create table persona(
 	id_persona int IDENTITY(1,1) primary key,
-	tipo_persona varchar,
-	a_paterno varchar,
-	a_materno varchar,
-	nombre varchar,
-	fecha_nacimiento varchar,
-	sexo varchar,
-	curp varchar,
-	rfc varchar,
-	correo varchar,
-	telefono1 varchar,
-	telefono2 varchar
+	tipo_persona varchar(100),
+	a_paterno varchar(100),
+	a_materno varchar(100),
+	nombre varchar(100),
+	fecha_nacimiento varchar(100),
+	sexo varchar(100),
+	curp varchar(100),
+	rfc varchar(100),
+	correo varchar(100),
+	telefono1 varchar(100),
+	telefono2 varchar(100)
 );
 create table direccion(
 	id_direccion int IDENTITY(1,1) primary key,
-	calle varchar,
+	calle varchar(100),
 	numero int,
-	cp varchar,
-	colonia varchar,
-	municipio varchar,
-	entidad_federativa varchar
+	cp varchar(100),
+	colonia varchar(100),
+	municipio varchar(100),
+	entidad_federativa varchar(100)
 );
 create table trabajador(
 	id_trabajador int IDENTITY(1,1) primary key,
 	id_persona int,
 	id_direccion int,
-	url_foto varchar,
-	numero_licencia varchar,
-	vigencia_licencia varchar,
-	nss_trabajador varchar,
-	fecha_ingreso varchar,
+	url_foto varchar(100),
+	numero_licencia varchar(100),
+	vigencia_licencia varchar(100),
+	nss_trabajador varchar(100),
+	fecha_ingreso varchar(100),
 	sueldo int,
 	sueldo_integrado int,
-	puesto varchar,
-	riesgo_trabajo varchar,
-	tipo_contrato varchar,
-	localidad_laboral varchar,
+	puesto varchar(100),
+	riesgo_trabajo varchar(100),
+	tipo_contrato varchar(100),
+	localidad_laboral varchar(100),
+	sindicalizado bit,
+	tipo_jornada varchar(100),
+	periodicidad varchar(100),
+	numero_empleado varchar(100)
 	foreign key(id_persona) references persona(id_persona),
 	foreign key(id_direccion) references direccion(id_direccion)
 );
@@ -65,12 +68,12 @@ create table servicio(
 	id_cliente int,
 	fecha_solicitud datetime,
 	fecha_realizacion datetime,
-	tipo_camion varchar,
-	placas_camion varchar,
+	tipo_camion varchar(100),
+	placas_camion varchar(100),
 	id_trabajador int,
-	tipo_carga varchar,
-	ciudad_origen varchar,
-	ciudad_destino varchar,
+	tipo_carga varchar(100),
+	ciudad_origen varchar(100),
+	ciudad_destino varchar(100),
 	sub_total int,
 	iva int,
 	isr int,
@@ -85,7 +88,7 @@ create table costo_servicio(
 	kilometraje_inicial int,
 	kilometraje_final int,
 	litros_gastados int,
-	calculo_rendimiento varchar,
+	calculo_rendimiento varchar(100),
 	diesel_cargado int,
 	casetas int,
 	comision int,

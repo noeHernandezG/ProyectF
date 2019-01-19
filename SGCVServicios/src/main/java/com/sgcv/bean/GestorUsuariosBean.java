@@ -82,10 +82,10 @@ public class GestorUsuariosBean {
             parametros.add(new Parametros(CONSTANTE.CADENA,pass,"clave"));
             Dao<Usuario> dao= new Dao<Usuario>(Usuario.class);
             usuarios=dao.consultaQueryByParametros("Usuario.findByClaveAndUser", parametros);
-            System.out.println("Total encontrado = "+usuarios.size());
+            System.out.println("Total : "+usuarios.size());
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return "Se encontraron "+usuarios.size();
+        return "Total : "+usuarios.size();
     }
 }

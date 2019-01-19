@@ -48,6 +48,18 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Trabajador.findByLocalidadLaboral", query = "SELECT t FROM Trabajador t WHERE t.localidadLaboral = :localidadLaboral")})
 public class Trabajador implements Serializable {
 
+    @Column(name = "sindicalizado")
+    private Boolean sindicalizado;
+    @Size(max = 100)
+    @Column(name = "tipo_jornada")
+    private String tipoJornada;
+    @Size(max = 100)
+    @Column(name = "periodicidad")
+    private String periodicidad;
+    @Size(max = 100)
+    @Column(name = "numero_empleado")
+    private String numeroEmpleado;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -244,6 +256,38 @@ public class Trabajador implements Serializable {
     @Override
     public String toString() {
         return "com.sgcv.dao.Trabajador[ idTrabajador=" + idTrabajador + " ]";
+    }
+
+    public Boolean getSindicalizado() {
+        return sindicalizado;
+    }
+
+    public void setSindicalizado(Boolean sindicalizado) {
+        this.sindicalizado = sindicalizado;
+    }
+
+    public String getTipoJornada() {
+        return tipoJornada;
+    }
+
+    public void setTipoJornada(String tipoJornada) {
+        this.tipoJornada = tipoJornada;
+    }
+
+    public String getPeriodicidad() {
+        return periodicidad;
+    }
+
+    public void setPeriodicidad(String periodicidad) {
+        this.periodicidad = periodicidad;
+    }
+
+    public String getNumeroEmpleado() {
+        return numeroEmpleado;
+    }
+
+    public void setNumeroEmpleado(String numeroEmpleado) {
+        this.numeroEmpleado = numeroEmpleado;
     }
     
 }

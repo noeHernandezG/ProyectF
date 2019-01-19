@@ -19,7 +19,8 @@ import java.net.URL;
  */
 public class ClienteREST {
     
-    public void getResponse(String url,String method,String request){
+    public String getResponse(String url,String method,String request){
+        String response;
         try{
             URL urlREST = new URL(url);
             HttpURLConnection conn = (HttpURLConnection) urlREST.openConnection();
@@ -32,25 +33,27 @@ public class ClienteREST {
             os.flush();
             
             if (conn.getResponseCode() != 200) {
-                    throw new RuntimeException("Failed : HTTP error code : "
-                                    + conn.getResponseCode());
+                response= "Failed : HTTP error code : "+ conn.getResponseCode();
             }
-
+            response=conn.getResponseCode()+" ";
             BufferedReader br = new BufferedReader(new InputStreamReader(
                     (conn.getInputStream())));
-
             String output;
             System.out.println("Output from Server .... \n");
             while ((output = br.readLine()) != null) {
                     System.out.println(output);
+                    response= response+output;
             }
             conn.disconnect();
         } catch (MalformedURLException e) {
+            response=e.toString();
               e.printStackTrace();
         } catch (IOException e) {
+            response=e.toString();
               e.printStackTrace();
 
         }
+        return response;
     }
     
     public static void main(String[] args) {
@@ -61,7 +64,9 @@ public class ClienteREST {
 "    \"clave\":\"==\"\n" +
 "}";
         ClienteREST cliente= new ClienteREST();
-        cliente.getResponse("http://192.168.56.1:7001/SGCVServicios/resources/gestorUsuariosWS/login",
+        String response = cliente.getResponse("http://192.168.56.1:7001/SGCVServicios/resources/gestorUsuariosWS/insertarUsuario",
                 "POST", request);
+        
+        System.out.println(response);
     }
 }

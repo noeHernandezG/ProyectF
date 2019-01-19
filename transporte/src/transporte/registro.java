@@ -6,6 +6,11 @@
 package transporte;
 
 import com.sgcv.bean.UsuariosBean;
+import com.sgcv.dto.UsuarioDTO;
+import com.sgcv.utils.Encrypt;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -196,6 +201,32 @@ public class registro extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         UsuariosBean usuarios=new UsuariosBean();
+        if(maiRegl.getText().equals("")||!usuarios.validaCorreo(maiRegl.getText())){
+            JOptionPane.showMessageDialog(this,"Ingrese un correo valido");
+        }else if(nameReg.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese un nombre de usuario");
+        }else if(passReg.getText().equals("")||!usuarios.validaContraseña(passReg.getText())){
+            JOptionPane.showMessageDialog(this,"La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula");
+        }else if(!pass2Reg.getText().equals(passReg.getText())){
+            JOptionPane.showMessageDialog(this,"Las contraseñas no coinciden");
+        }else{
+            try {
+                Encrypt encrypt= new Encrypt();
+                UsuarioDTO usuarioDTO = new UsuarioDTO();
+                usuarioDTO.setClave(encrypt.encryptText(passReg.getText()));
+                usuarioDTO.setCorreo(maiRegl.getText());
+                usuarioDTO.setNombre(nameReg.getText());
+                if(usuarios.registrarUsuario(usuarioDTO).contains("200 true")){
+                    JOptionPane.showMessageDialog(this, "El usuario se registro correctamente");
+                }else{
+                    JOptionPane.showMessageDialog(this, "No se pudo registrar al usuario");
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, "No se pudo registrar al usuario");
+            }
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

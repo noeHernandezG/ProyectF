@@ -11,17 +11,10 @@ import java.util.List;
  *
  * @author Ernesto
  */
-public class RespuestaUsuarioDTO {
-    List<UsuarioDTO> usuarios;
-    ProcesoDTO proceso;
-
-    public List<UsuarioDTO> getUsuarios() {
-        return usuarios;
-    }
-
-    public void setUsuarios(List<UsuarioDTO> usuarios) {
-        this.usuarios = usuarios;
-    }
+public class RespuestaMunicipiosDTO {
+    
+    private ProcesoDTO proceso;
+    private List<MunicipiosDTO> municipios;
 
     public ProcesoDTO getProceso() {
         return proceso;
@@ -30,6 +23,15 @@ public class RespuestaUsuarioDTO {
     public void setProceso(ProcesoDTO proceso) {
         this.proceso = proceso;
     }
+
+    public List<MunicipiosDTO> getMunicipios() {
+        return municipios;
+    }
+
+    public void setMunicipios(List<MunicipiosDTO> municipios) {
+        this.municipios = municipios;
+    }
+    
     
     
 }
