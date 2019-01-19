@@ -24,6 +24,23 @@ public class PersonaDTO {
     private String telefono1;
     private String telefono2;
 
+    public PersonaDTO() {
+        this.idPersona = 0;
+        this.tipoPersona = "";
+        this.aPaterno = "";
+        this.aMaterno = "";
+        this.nombre = "";
+        this.fechaNacimiento = "";
+        this.sexo = "";
+        this.curp = "";
+        this.rfc = "";
+        this.correo = "";
+        this.telefono1 = "";
+        this.telefono2 = "";
+    }
+
+    
+    
     public Integer getIdPersona() {
         return idPersona;
     }

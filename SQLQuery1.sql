@@ -27,7 +27,7 @@ create table persona(
 create table direccion(
 	id_direccion int IDENTITY(1,1) primary key,
 	calle varchar(100),
-	numero int,
+	numero varchar(300),
 	cp varchar(100),
 	colonia varchar(100),
 	municipio varchar(100),

@@ -41,6 +41,10 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Direccion.findByEntidadFederativa", query = "SELECT d FROM Direccion d WHERE d.entidadFederativa = :entidadFederativa")})
 public class Direccion implements Serializable {
 
+    @Size(max = 300)
+    @Column(name = "numero")
+    private String numero;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,8 +53,6 @@ public class Direccion implements Serializable {
     @Size(max = 1)
     @Column(name = "calle")
     private String calle;
-    @Column(name = "numero")
-    private Integer numero;
     @Size(max = 1)
     @Column(name = "cp")
     private String cp;
@@ -91,13 +93,6 @@ public class Direccion implements Serializable {
         this.calle = calle;
     }
 
-    public Integer getNumero() {
-        return numero;
-    }
-
-    public void setNumero(Integer numero) {
-        this.numero = numero;
-    }
 
     public String getCp() {
         return cp;
@@ -172,6 +167,14 @@ public class Direccion implements Serializable {
     @Override
     public String toString() {
         return "com.sgcv.dao.Direccion[ idDireccion=" + idDireccion + " ]";
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
     
 }
