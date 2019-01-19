@@ -5,6 +5,13 @@
  */
 package transporte;
 
+import com.sgcv.bean.UsuariosBean;
+import com.sgcv.dto.UsuarioDTO;
+import com.sgcv.utils.Encrypt;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author FERRUZ
@@ -29,9 +36,9 @@ public class sesion extends javax.swing.JFrame {
 
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        usuarioJT = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        passwordJT = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -51,15 +58,15 @@ public class sesion extends javax.swing.JFrame {
         jLabel6.setText("NOMBRE DE USUARIO:");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        usuarioJT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        usuarioJT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("CONTRASEÑA:");
         jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        passwordJT.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        passwordJT.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButton1.setText("INGRESAR");
@@ -114,8 +121,8 @@ public class sesion extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                    .addComponent(jTextField3))
+                    .addComponent(usuarioJT, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(passwordJT))
                 .addGap(81, 81, 81))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,11 +160,11 @@ public class sesion extends javax.swing.JFrame {
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(usuarioJT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordJT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
@@ -172,9 +179,31 @@ public class sesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         ingreso_opciones ing=new ingreso_opciones();
-        ing.setVisible(true);
-        this.setVisible(false);
+        if(usuarioJT.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese un nombre de usuario");
+        }else if(passwordJT.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese una contraseña");
+        }else{
+            try {
+                UsuariosBean usuarios = new UsuariosBean();
+                Encrypt encrypt= new Encrypt();
+                UsuarioDTO usuario=new UsuarioDTO();
+                usuario.setNombre(usuarioJT.getText());
+                usuario.setClave(encrypt.encryptText(passwordJT.getText()));
+                
+                if(usuarios.loginUsuario(usuario)){
+                    ingreso_opciones ing=new ingreso_opciones();
+                    ing.setVisible(true);
+                    this.setVisible(false);
+                }else{
+                    JOptionPane.showMessageDialog(this,"Usuario o contraseña invalidos");
+                }
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this,"Error al iniciar sesion");
+            }
+            
+        } 
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -232,9 +261,9 @@ public class sesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextField passwordJT;
     private javax.swing.JButton regresar_inicio1;
+    private javax.swing.JTextField usuarioJT;
     // End of variables declaration//GEN-END:variables
 }

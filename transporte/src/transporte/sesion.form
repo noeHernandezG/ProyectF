@@ -31,8 +31,8 @@
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jTextField2" pref="189" max="32767" attributes="0"/>
-                  <Component id="jTextField3" max="32767" attributes="0"/>
+                  <Component id="usuarioJT" pref="189" max="32767" attributes="0"/>
+                  <Component id="passwordJT" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
           </Group>
@@ -82,12 +82,12 @@
               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="usuarioJT" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="passwordJT" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton4" min="-2" pref="23" max="-2" attributes="0"/>
@@ -125,7 +125,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="usuarioJT">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -146,7 +146,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="passwordJT">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

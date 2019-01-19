@@ -42,8 +42,21 @@ public class Dao<T> {
         return result;
     } 
     
+    public  List<T> consultaNmed(String query){
+        List<T> result=null;
+        try{
+            createEMF();
+            result= em.createNamedQuery(query).getResultList();
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            closeEMF();
+        }
+        return result;
+    } 
     
     public boolean inserta(T entity){
+        boolean proceso=true;
         createEMF();
         try{
             em.getTransaction().begin();
@@ -51,11 +64,12 @@ public class Dao<T> {
             em.getTransaction().commit();
         }catch(Exception e){
             e.printStackTrace();
-            System.out.println("Error al insertar "+entidad.getName());
+            System.out.println("Error al insertar ");
+            proceso = false;
         }finally{
             closeEMF();
         }
-        return false;
+        return proceso;
     }   
     
     public List<T> consultaQueryByParametros (String query, List<Parametros> parametros){
@@ -69,6 +83,8 @@ public class Dao<T> {
                     q.setParameter(parametro.getNombre(),parametro.getValor());
                 }
                 if (CONSTANTE.NUMERO.equals(parametro.getTipo())) {
+                    System.out.println("valor P "+parametro.getValor());
+                    System.out.println("valor n "+parametro.getNombre());
                     q.setParameter(parametro.getNombre(), Integer.parseInt(parametro.getValor()));
                 }
             }
