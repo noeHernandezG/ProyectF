@@ -30,6 +30,28 @@ public class EmpleadoDTO {
     private DireccionDTO idDireccion;
     private PersonaDTO idPersona;
 
+    public EmpleadoDTO() {
+        this.sindicalizado = true;
+        this.tipoJornada = "";
+        this.periodicidad = "";
+        this.numeroEmpleado = "";
+        this.idTrabajador = 0;
+        this.urlFoto = "";
+        this.numeroLicencia = "";
+        this.vigenciaLicencia = "";
+        this.nssTrabajador = "";
+        this.fechaIngreso = "";
+        this.sueldo = 0;
+        this.sueldoIntegrado = 0;
+        this.puesto = "";
+        this.riesgoTrabajo = "";
+        this.tipoContrato = "";
+        this.localidadLaboral = "";
+        this.idDireccion = null;
+        this.idPersona = null;
+    }
+
+    
     public Boolean getSindicalizado() {
         return sindicalizado;
     }

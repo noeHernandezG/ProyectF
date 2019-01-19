@@ -13,12 +13,23 @@ public class DireccionDTO {
     
     private Integer idDireccion;
     private String calle;
-    private Integer numero;
+    private String numero;
     private String cp;
     private String colonia;
     private String municipio;
     private String entidadFederativa;
 
+    public DireccionDTO() {
+        this.idDireccion = 0;
+        this.calle = "";
+        this.numero = "";
+        this.cp = "";
+        this.colonia = "";
+        this.municipio = "";
+        this.entidadFederativa = "";
+    }
+
+    
     public Integer getIdDireccion() {
         return idDireccion;
     }
@@ -35,11 +46,11 @@ public class DireccionDTO {
         this.calle = calle;
     }
 
-    public Integer getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
