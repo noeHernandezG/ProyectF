@@ -50,15 +50,15 @@ public class GestorEstadosMunicipiosBean {
     }
     
     
-    public RespuestaEstadosDTO buscarMunicipios(String id){
+    public RespuestaEstadosDTO buscarMunicipios(String estado){
         RespuestaEstadosDTO respuesta = new RespuestaEstadosDTO();
         List<EstadosDTO> estadosDTO = new ArrayList();
         ProcesoDTO proceso = new ProcesoDTO();
         List<Parametros> param= new ArrayList();
-        param.add(new Parametros(CONSTANTE.NUMERO,id,"id"));
+        param.add(new Parametros(CONSTANTE.CADENA,estado,"estado"));
         try{
             Dao<Estados> dao= new Dao<Estados>(Estados.class);
-            List<Estados> estadosEnty = dao.consultaQueryByParametros("Estados.findById",param);
+            List<Estados> estadosEnty = dao.consultaQueryByParametros("Estados.findByEstado",param);
             
             for(Estados estadoEnty: estadosEnty){
 //                Municipio

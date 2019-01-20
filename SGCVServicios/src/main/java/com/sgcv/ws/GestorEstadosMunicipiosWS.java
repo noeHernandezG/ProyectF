@@ -62,7 +62,7 @@ public class GestorEstadosMunicipiosWS {
     @Produces(MediaType.APPLICATION_JSON)
     public RespuestaEstadosDTO buscarMunicipios(EstadosDTO estado) {
         GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
-        System.out.println(""+estado.getId().toString());
-        return gestorEstados.buscarMunicipios(estado.getId().toString());
+//        System.out.println(""+estado.getId().toString());
+        return gestorEstados.buscarMunicipios(estado.getEstado());
     }
 }

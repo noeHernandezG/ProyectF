@@ -1,8 +1,13 @@
 package transporte;
 
+import com.sgcv.bean.EmpleadosBean;
 import com.sgcv.dto.DireccionDTO;
 import com.sgcv.dto.EmpleadoDTO;
+import com.sgcv.dto.EstadosDTO;
+import com.sgcv.dto.MunicipiosDTO;
 import com.sgcv.dto.PersonaDTO;
+import com.sgcv.dto.RespuestaEstadosDTO;
+import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -24,6 +29,7 @@ public class trabajadores_nuevos_datosP extends javax.swing.JFrame {
      */
     public trabajadores_nuevos_datosP() {
         initComponents();
+        llenarEstados();
     }
 
     /**
@@ -248,7 +254,16 @@ public class trabajadores_nuevos_datosP extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("DD/MM/AAAA");
 
-        ingreso_e.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "municipio" }));
+        ingreso_e.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ingreso_eItemStateChanged(evt);
+            }
+        });
+        ingreso_e.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ingreso_eActionPerformed(evt);
+            }
+        });
 
         ingreso_m.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "municipio" }));
 
@@ -532,6 +547,37 @@ public class trabajadores_nuevos_datosP extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    private void ingreso_eItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ingreso_eItemStateChanged
+        // TODO add your handling code here:
+//        System.out.println(ingreso_e.getSelectedItem().toString());
+    }//GEN-LAST:event_ingreso_eItemStateChanged
+
+    private void ingreso_eActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingreso_eActionPerformed
+        // TODO add your handling code here:
+        System.out.println(ingreso_e.getSelectedItem().toString());
+        ingreso_m.removeAllItems();
+        llenarMunicipios();
+    }//GEN-LAST:event_ingreso_eActionPerformed
+
+   public void llenarEstados(){
+       EmpleadosBean empleados= new EmpleadosBean();
+       RespuestaEstadosDTO estados=empleados.getEstados();
+       for(EstadosDTO estado: estados.getEstados()){
+           ingreso_e.addItem(estado.getEstado());
+       }
+   }
+   
+   public void llenarMunicipios(){
+       EmpleadosBean empleados= new EmpleadosBean();
+       EstadosDTO estadosDTO= new EstadosDTO();
+       estadosDTO.setEstado(ingreso_e.getSelectedItem().toString());
+       RespuestaEstadosDTO estados=empleados.getMunicipios(estadosDTO);
+        Collections.sort(estados.getEstados().get(0).getMunicipios());
+//         Collections.sort(list);
+       for(MunicipiosDTO municipio: estados.getEstados().get(0).getMunicipios()){
+           ingreso_m.addItem(municipio.getMunicipio());
+       }
+   }
     /**
      * @param args the command line arguments
      */

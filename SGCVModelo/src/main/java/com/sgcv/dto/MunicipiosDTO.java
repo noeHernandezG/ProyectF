@@ -9,7 +9,7 @@ package com.sgcv.dto;
  *
  * @author Ernesto
  */
-public class MunicipiosDTO {
+public class MunicipiosDTO implements Comparable<MunicipiosDTO>{
     
     private Integer id;
     private String municipio;
@@ -31,4 +31,21 @@ public class MunicipiosDTO {
     }
     
     
+//    @Override
+//    public int compareTo(MunicipiosDTO o) {
+//        if (((int)municipio.charAt(0)) < ((int)o.municipio.charAt(0))) {
+//                return -1;
+//            }
+//        if (((int)municipio.charAt(0)) < ((int)o.municipio.charAt(0))) {
+//                return 1;
+//            }
+//            return 0;
+//    }
+
+    @Override
+    public int compareTo(MunicipiosDTO o) {
+        String a=new String(this.getMunicipio());
+        String b=new String(o.getMunicipio());
+        return a.compareTo(b);
+    }
 }

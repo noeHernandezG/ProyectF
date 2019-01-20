@@ -56,6 +56,43 @@ public class ClienteREST {
         return response;
     }
     
+    public String getResponseDTO(String url,String method,String request){
+        String response;
+        try{
+            URL urlREST = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection) urlREST.openConnection();
+            conn.setDoOutput(true);
+            conn.setRequestMethod(method);
+            conn.setRequestProperty("Content-Type", "application/json");
+//            
+            OutputStream os = conn.getOutputStream();
+            os.write(request.getBytes());
+            os.flush();
+            
+            if (conn.getResponseCode() != 200) {
+                response= "Failed : HTTP error code : "+ conn.getResponseCode();
+            }
+            response=" ";
+            BufferedReader br = new BufferedReader(new InputStreamReader(
+                    (conn.getInputStream())));
+            String output;
+            System.out.println("Output from Server .... \n");
+            while ((output = br.readLine()) != null) {
+                    System.out.println(output);
+                    response= response+output;
+            }
+            conn.disconnect();
+        } catch (MalformedURLException e) {
+            response=e.toString();
+              e.printStackTrace();
+        } catch (IOException e) {
+            response=e.toString();
+              e.printStackTrace();
+
+        }
+        return response;
+    }
+    
     public static void main(String[] args) {
         String request= "{\n" +
 "	\"id\":1,\n" +
