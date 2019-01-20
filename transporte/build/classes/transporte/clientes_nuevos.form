@@ -31,11 +31,11 @@
           <Group type="102" attributes="0">
               <Component id="jLabel27" min="-2" pref="101" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jTextField5" max="32767" attributes="0"/>
+              <Component id="nombre_cliente" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel28" min="-2" pref="70" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jTextField6" min="-2" pref="147" max="-2" attributes="0"/>
+              <Component id="ap_cliente" min="-2" pref="147" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
@@ -49,25 +49,25 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel6" min="-2" pref="114" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField1" min="-2" pref="332" max="-2" attributes="0"/>
+                      <Component id="ingreso_empresa" min="-2" pref="332" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel30" min="-2" pref="70" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField8" min="-2" pref="159" max="-2" attributes="0"/>
+                      <Component id="am_cliente" min="-2" pref="159" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jLabel31" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField9" min="-2" pref="170" max="-2" attributes="0"/>
+                      <Component id="ingreso_rfc" min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel24" min="-2" pref="70" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField2" min="-2" pref="157" max="-2" attributes="0"/>
+                      <Component id="ingreso_tel1" min="-2" pref="157" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel26" min="-2" pref="80" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField4" min="-2" pref="157" max="-2" attributes="0"/>
+                      <Component id="ingreso_tel2" min="-2" pref="157" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
@@ -80,26 +80,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel25" min="-2" pref="133" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jTextField3" min="-2" pref="232" max="-2" attributes="0"/>
+                      <Component id="ingreso_correo" min="-2" pref="232" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel33" min="-2" pref="64" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTextField11" min="-2" pref="147" max="-2" attributes="0"/>
+                      <Component id="ingreso_colonia" min="-2" pref="147" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel34" min="-2" pref="74" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jComboBox2" min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="ingreso_municipio" min="-2" pref="173" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel29" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField7" min="-2" pref="224" max="-2" attributes="0"/>
+                          <Component id="ingreso_calle" min="-2" pref="224" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel32" min="-2" pref="64" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jTextField10" min="-2" pref="147" max="-2" attributes="0"/>
+                          <Component id="ingreso_numero" min="-2" pref="147" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -112,7 +112,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel35" min="-2" pref="133" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jComboBox3" min="-2" pref="173" max="-2" attributes="0"/>
+                                  <Component id="ingreso_entidad" min="-2" pref="173" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -120,7 +120,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btn_salir" min="-2" pref="109" max="-2" attributes="0"/>
-                              <Component id="jTextField13" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="ingreso_cp" min="-2" pref="121" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -144,7 +144,7 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextField1" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="ingreso_empresa" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -152,54 +152,54 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel27" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField5" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="nombre_cliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel28" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField6" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ap_cliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel30" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField8" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="am_cliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel31" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField9" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingreso_rfc" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel24" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingreso_tel1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel26" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField4" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingreso_tel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel25" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField3" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingreso_correo" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel8" min="-2" pref="19" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel29" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField7" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingreso_calle" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField10" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingreso_numero" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jTextField11" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingreso_colonia" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel34" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ingreso_municipio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ingreso_entidad" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel36" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="jTextField13" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="ingreso_cp" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
@@ -226,7 +226,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="ingreso_empresa">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -235,7 +235,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ingreso_empresaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
@@ -260,7 +260,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JTextField" name="ingreso_tel1">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -280,7 +280,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="ingreso_correo">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -300,7 +300,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="ingreso_tel2">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -309,7 +309,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField7">
+    <Component class="javax.swing.JTextField" name="ingreso_calle">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -340,7 +340,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField9">
+    <Component class="javax.swing.JTextField" name="ingreso_rfc">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -456,7 +456,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
+    <Component class="javax.swing.JTextField" name="nombre_cliente">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -476,7 +476,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
+    <Component class="javax.swing.JTextField" name="ap_cliente">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -496,7 +496,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField8">
+    <Component class="javax.swing.JTextField" name="am_cliente">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -522,7 +522,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField10">
+    <Component class="javax.swing.JTextField" name="ingreso_numero">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -542,7 +542,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField11">
+    <Component class="javax.swing.JTextField" name="ingreso_colonia">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -584,7 +584,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField13">
+    <Component class="javax.swing.JTextField" name="ingreso_cp">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -593,7 +593,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="ingreso_municipio">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
@@ -603,7 +603,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox3">
+    <Component class="javax.swing.JComboBox" name="ingreso_entidad">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
