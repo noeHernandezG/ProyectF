@@ -1,5 +1,7 @@
 package transporte;
 
+import com.sgcv.bean.EmpleadosBean;
+import com.sgcv.dto.EmpleadoDTO;
 import javax.swing.JOptionPane;
 
 /*
@@ -17,9 +19,18 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
     /**
      * Creates new form vista_trabajador
      */
+    
+    private EmpleadoDTO empleado;
     public trabajadores_nuevos_datosL() {
         initComponents();
     }
+
+    public trabajadores_nuevos_datosL(EmpleadoDTO empleado) {
+        this.empleado = empleado;
+        initComponents();
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,20 +64,20 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btn_inicio = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        ingreso_entidad = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        ingreso_riesgo = new javax.swing.JComboBox<>();
+        ingreso_puesto = new javax.swing.JComboBox<>();
         jLabel40 = new javax.swing.JLabel();
         num_empleado = new javax.swing.JTextField();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        ingreso_contrato = new javax.swing.JComboBox<>();
         jLabel41 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        ingreso_jornada = new javax.swing.JComboBox<>();
         jLabel42 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        ingreso_pago = new javax.swing.JComboBox<>();
         jLabel43 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        ingreso_sindico = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -171,18 +182,18 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
         jLabel7.setText("DATOS LABORALES TRABAJADOR");
         jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ENTIDADES:", "AGUASCALIENTES", "BAJA CALIFORNIA", "BAJA CALIFORNIA SUR", "CAMPECHE", "CHIHUAHUA", "CHIAPAS", "CIUDAD DE MEXICO", "COAHUILA", "COLIMA", "DURANGO", "GUANAJUATO", "GUERRERO", "HIDALGO", "JALISCO", "MEXICO", "MICHOACAN", "MORELOS", "NAYARIT", "NUEVO LEON", "OAXACA", "PUEBLA", "QUERETARO", "QUINTANA ROO", "SAN LUIS POTOSI", "SINALOA", "SONORA", "TABASCO", "TAMAULIPAS", "TLAXCALA", "VERACRUZ", "YUCATAN", "ZACATECAS" }));
+        ingreso_entidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ENTIDADES:", "AGUASCALIENTES", "BAJA CALIFORNIA", "BAJA CALIFORNIA SUR", "CAMPECHE", "CHIHUAHUA", "CHIAPAS", "CIUDAD DE MEXICO", "COAHUILA", "COLIMA", "DURANGO", "GUANAJUATO", "GUERRERO", "HIDALGO", "JALISCO", "MEXICO", "MICHOACAN", "MORELOS", "NAYARIT", "NUEVO LEON", "OAXACA", "PUEBLA", "QUERETARO", "QUINTANA ROO", "SAN LUIS POTOSI", "SINALOA", "SONORA", "TABASCO", "TAMAULIPAS", "TLAXCALA", "VERACRUZ", "YUCATAN", "ZACATECAS" }));
 
         jTextPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextPane1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jTextPane1.setText("CALLE JOSE MARIA VELASCO S/N, COL. SAN ANTONIO XAHUENTO, TULTEPEC, ESTADO DE MEXICO, C.P. 54960 CORREO: info@ocsalev.com TELEFONO: 01(55) 50867800");
         jScrollPane1.setViewportView(jTextPane1);
 
-        jComboBox2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-Clase I", "2-Clase II", "3-Clase III", "4-Clase IV", "5-Clase V" }));
+        ingreso_riesgo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ingreso_riesgo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-Clase I", "2-Clase II", "3-Clase III", "4-Clase IV", "5-Clase V" }));
 
-        jComboBox3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-PUESTO1", "02-PUESTO2", "03-PUESTO3" }));
+        ingreso_puesto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ingreso_puesto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-PUESTO1", "02-PUESTO2", "03-PUESTO3" }));
 
         jLabel40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel40.setText("NUM EMPLEADO:");
@@ -190,29 +201,29 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
 
         num_empleado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Contrato de trabajo por tiempo indeterminado", "02-Contrato de trabajo para obra determinada", "03-Contrato de trabajo por tiempo determinado", "04-Contrato de trabajo por temporada", "05-Contrato de trabajo sujeto a prueba", "06-Contrato de trabajo con capacitacion inicial", "07-Modalidad de contratacion por pago de hora laborada", "08-Modalidad de trabajo por comision laboral", "09-Modalidad de contratacion donde no existe relacion de trabajo", "10-Jubilacion", "pension", "retiro" }));
+        ingreso_contrato.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ingreso_contrato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Contrato de trabajo por tiempo indeterminado", "02-Contrato de trabajo para obra determinada", "03-Contrato de trabajo por tiempo determinado", "04-Contrato de trabajo por temporada", "05-Contrato de trabajo sujeto a prueba", "06-Contrato de trabajo con capacitacion inicial", "07-Modalidad de contratacion por pago de hora laborada", "08-Modalidad de trabajo por comision laboral", "09-Modalidad de contratacion donde no existe relacion de trabajo", "10-Jubilacion", "pension", "retiro" }));
 
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel41.setText("TIPO JORNADA:");
         jLabel41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Diurna", "02-Nocturna", "03-Mixta", "04-Por hora", "05-Reducida", "06-Continuada", "07-Partida", "08-Por turnos" }));
+        ingreso_jornada.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ingreso_jornada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Diurna", "02-Nocturna", "03-Mixta", "04-Por hora", "05-Reducida", "06-Continuada", "07-Partida", "08-Por turnos" }));
 
         jLabel42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel42.setText("PERIODICIDAD PAGO:");
         jLabel42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Diario", "02-Semanal", "03-Catorcenal", "04-Quincenal", "05-Mensual", "06-Bimestral", "07-Unidad obra", "08-Comision", "09-Precio alzado" }));
+        ingreso_pago.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ingreso_pago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Diario", "02-Semanal", "03-Catorcenal", "04-Quincenal", "05-Mensual", "06-Bimestral", "07-Unidad obra", "08-Comision", "09-Precio alzado" }));
 
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("SINDICALIZADO:");
         jLabel43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jComboBox7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
+        ingreso_sindico.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        ingreso_sindico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("DD/MM/AAAA");
@@ -239,7 +250,7 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(ingreso_puesto, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -269,7 +280,7 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ingreso_riesgo, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,11 +303,11 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ingreso_contrato, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ingreso_entidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -304,12 +315,12 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ingreso_jornada, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(ingreso_pago, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(ingreso_sindico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(25, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -335,14 +346,15 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(num_empleado, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ingreso_puesto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ingreso_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ingreso_riesgo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ingreso_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,19 +364,19 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ingreso_contrato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox1))
+                    .addComponent(ingreso_entidad))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ingreso_jornada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ingreso_pago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ingreso_sindico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -395,7 +407,28 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
         }else if(sueldo_diario.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el sueldo diario");
             
+            }else{
+            empleado.getIdPersona().setCurp(ingreso_curp.getText());
+            empleado.getIdPersona().setRfc(ingreso_rfc.getText());
+            empleado.setNssTrabajador(ingreso_nss.getText());
+            empleado.setNumeroEmpleado(num_empleado.getText());
+            empleado.setPuesto(ingreso_puesto.getSelectedItem().toString());
+            empleado.setFechaIngreso(ingreso_fecha.getText());
+            empleado.setRiesgoTrabajo(ingreso_riesgo.getSelectedItem().toString());
+            empleado.setSueldo(Integer.parseInt(sueldo_base.getText()));
+            empleado.setSueldoIntegrado(Integer.parseInt(sueldo_diario.getText()));
+            empleado.setTipoContrato(ingreso_contrato.getSelectedItem().toString());
+            empleado.setLocalidadLaboral(ingreso_entidad.getSelectedItem().toString());
+            empleado.setTipoJornada(ingreso_jornada.getSelectedItem().toString());
+            empleado.setPeriodicidad(ingreso_pago.getSelectedItem().toString());
+            if(ingreso_sindico.getSelectedItem().toString().equals("NO")){
+                empleado.setSindicalizado(false);
+            }else{
+                empleado.setSindicalizado(true);
             }
+            EmpleadosBean empleadoB = new EmpleadosBean();
+            JOptionPane.showMessageDialog(this,empleadoB.registrarEmpleado(empleado));
+        }
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -440,133 +473,7 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(trabajadores_nuevos_datosL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -581,17 +488,17 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
     private javax.swing.JButton btn_inicio;
     private javax.swing.JButton btn_regresar;
     private javax.swing.JButton btn_salir;
+    private javax.swing.JComboBox<String> ingreso_contrato;
     private javax.swing.JTextField ingreso_curp;
+    private javax.swing.JComboBox<String> ingreso_entidad;
     private javax.swing.JTextField ingreso_fecha;
+    private javax.swing.JComboBox<String> ingreso_jornada;
     private javax.swing.JTextField ingreso_nss;
+    private javax.swing.JComboBox<String> ingreso_pago;
+    private javax.swing.JComboBox<String> ingreso_puesto;
     private javax.swing.JTextField ingreso_rfc;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> ingreso_riesgo;
+    private javax.swing.JComboBox<String> ingreso_sindico;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

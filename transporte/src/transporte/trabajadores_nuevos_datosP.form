@@ -72,7 +72,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel33" min="-2" pref="77" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jComboBox3" min="-2" pref="195" max="-2" attributes="0"/>
+                      <Component id="ingreso_m" min="-2" pref="195" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -80,7 +80,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel34" min="-2" pref="129" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" min="-2" pref="164" max="-2" attributes="0"/>
+                              <Component id="ingreso_e" min="-2" pref="164" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                               <Component id="jLabel35" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -134,7 +134,7 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel27" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jComboBox1" min="-2" pref="97" max="-2" attributes="0"/>
+                      <Component id="ingreso_sexo" min="-2" pref="97" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -203,7 +203,7 @@
                           <Component id="jLabel26" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="ingreso_fecha" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                           <Component id="jLabel27" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ingreso_sexo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -232,14 +232,14 @@
                   <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="ingreso_col" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jComboBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ingreso_m" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel34" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="ingreso_cp" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="ingreso_e" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -706,7 +706,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="ingreso_sexo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
@@ -725,20 +725,24 @@
         <Property name="text" type="java.lang.String" value="DD/MM/AAAA"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
+    <Component class="javax.swing.JComboBox" name="ingreso_e">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
+          <StringArray count="1">
+            <StringItem index="0" value="municipio"/>
+          </StringArray>
         </Property>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox3">
+    <Component class="javax.swing.JComboBox" name="ingreso_m">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
+          <StringArray count="1">
+            <StringItem index="0" value="municipio"/>
+          </StringArray>
         </Property>
       </Properties>
       <AuxValues>

@@ -4,6 +4,7 @@
   <persistence-unit name="SGCV_DS">
     <!--<provider>org.hibernate.ejb.HibernatePersistence</provider>-->
     <!--<jta-data-source/>-->
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.sgcv.dao.Usuario</class>
     <class>com.sgcv.dao.Cliente</class>
     <class>com.sgcv.dao.CostoServicio</class>
@@ -14,7 +15,8 @@
     <class>com.sgcv.dao.Persona</class>
     <class>com.sgcv.dao.Servicio</class>
     <class>com.sgcv.dao.Trabajador</class>
-    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <!--<exclude-unlisted-classes>true</exclude-unlisted-classes>-->
+    <validation-mode>NONE</validation-mode>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=DB_Ferruz"/>
       <property name="javax.persistence.jdbc.user" value="sa"/>
