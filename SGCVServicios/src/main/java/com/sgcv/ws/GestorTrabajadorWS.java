@@ -57,6 +57,14 @@ public class GestorTrabajadorWS {
     }
     
     @POST
+    @Path("buscarEmpleadoById")
+    @Produces(MediaType.APPLICATION_JSON)
+    public RespuestaEmpleadoDTO buscarEmpleadoById(EmpleadoDTO empleado) {
+        GestorTrabajadorBean gestor= new GestorTrabajadorBean();
+        return gestor.buscarEmpleadoById(empleado);
+    }
+    
+    @POST
     @Path("actualizarEmpleado")
     @Produces(MediaType.APPLICATION_JSON)
     public RespuestaEmpleadoDTO actualizarEmpleado(EmpleadoDTO empleado) {

@@ -7,6 +7,7 @@ package com.sgcv.bean;
 
 import com.sgcv.dao.Dao;
 import com.sgcv.dao.Direccion;
+import com.sgcv.dao.Parametros;
 import com.sgcv.dao.Persona;
 import com.sgcv.dao.Trabajador;
 import com.sgcv.dto.DireccionDTO;
@@ -14,6 +15,7 @@ import com.sgcv.dto.EmpleadoDTO;
 import com.sgcv.dto.PersonaDTO;
 import com.sgcv.dto.ProcesoDTO;
 import com.sgcv.dto.RespuestaEmpleadoDTO;
+import com.sgcv.utils.CONSTANTE;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -221,6 +223,82 @@ public class GestorTrabajadorBean {
     
     public RespuestaEmpleadoDTO eliminarEmpleado(EmpleadoDTO empleado){
         return new RespuestaEmpleadoDTO();
+    }
+    
+    
+    public RespuestaEmpleadoDTO buscarEmpleadoById(EmpleadoDTO empleado){
+        ProcesoDTO proceso = new ProcesoDTO();
+        RespuestaEmpleadoDTO respuesta = new RespuestaEmpleadoDTO();
+        List<EmpleadoDTO>trabajadoresDTO = new ArrayList();
+        try{
+            List<Trabajador> trabajadores= new ArrayList();
+            
+            Dao<Trabajador> daoT= new Dao<Trabajador>(Trabajador.class);
+            List<Parametros> parametros= new ArrayList();
+            parametros.add(new Parametros(CONSTANTE.NUMERO,empleado.getIdTrabajador().toString(),"idTrabajador"));
+            trabajadores = daoT.consultaQueryByParametros("Trabajador.findByIdTrabajador",parametros);
+            for(Trabajador trabajador:trabajadores){
+                DireccionDTO direccion = new DireccionDTO();
+                direccion.setCalle(trabajador.getIdDireccion().getCalle());
+                direccion.setColonia(trabajador.getIdDireccion().getColonia());
+                direccion.setCp(trabajador.getIdDireccion().getCp());
+                direccion.setEntidadFederativa(trabajador.getIdDireccion().getEntidadFederativa());
+                direccion.setIdDireccion(trabajador.getIdDireccion().getIdDireccion());
+                direccion.setMunicipio(trabajador.getIdDireccion().getMunicipio());
+                direccion.setNumero(trabajador.getIdDireccion().getNumero());
+                                                
+                PersonaDTO persona = new PersonaDTO();
+                persona.setCorreo(trabajador.getIdPersona().getCorreo());
+                persona.setCurp(trabajador.getIdPersona().getCurp());
+                persona.setFechaNacimiento(trabajador.getIdPersona().getFechaNacimiento());
+                persona.setIdPersona(trabajador.getIdPersona().getIdPersona());
+                persona.setNombre(trabajador.getIdPersona().getNombre());
+                persona.setRfc(trabajador.getIdPersona().getRfc());
+                persona.setSexo(trabajador.getIdPersona().getSexo());
+                persona.setTelefono1(trabajador.getIdPersona().getTelefono1());
+                persona.setTelefono2(trabajador.getIdPersona().getTelefono2());
+                persona.setTipoPersona(trabajador.getIdPersona().getTipoPersona());
+                persona.setaMaterno(trabajador.getIdPersona().getAMaterno());
+                persona.setaPaterno(trabajador.getIdPersona().getAPaterno());                                
+                
+                EmpleadoDTO empleadoDTO= new EmpleadoDTO();
+                empleadoDTO.setFechaIngreso(trabajador.getFechaIngreso());
+                empleadoDTO.setIdTrabajador(trabajador.getIdTrabajador());
+                empleadoDTO.setLocalidadLaboral(trabajador.getLocalidadLaboral());
+                empleadoDTO.setNssTrabajador(trabajador.getNssTrabajador());
+                empleadoDTO.setNumeroEmpleado(trabajador.getNumeroEmpleado());
+                empleadoDTO.setNumeroLicencia(trabajador.getNumeroLicencia());
+                empleadoDTO.setPeriodicidad(trabajador.getPeriodicidad());
+                empleadoDTO.setPuesto(trabajador.getPuesto());
+                empleadoDTO.setRiesgoTrabajo(trabajador.getRiesgoTrabajo());
+                empleadoDTO.setSindicalizado(trabajador.getSindicalizado());
+                empleadoDTO.setSueldo(trabajador.getSueldo());
+                empleadoDTO.setSueldoIntegrado(trabajador.getSueldoIntegrado());
+                empleadoDTO.setTipoContrato(trabajador.getTipoContrato());
+                empleadoDTO.setTipoJornada(trabajador.getTipoJornada());
+                empleadoDTO.setUrlFoto(trabajador.getUrlFoto());
+                empleadoDTO.setVigenciaLicencia(trabajador.getVigenciaLicencia());
+                
+                empleadoDTO.setIdPersona(persona);
+                empleadoDTO.setIdDireccion(direccion);
+                
+                trabajadoresDTO.add(empleadoDTO);
+            }
+            proceso.setResultado(true);
+            
+            respuesta.setEmpleado(trabajadoresDTO);
+            if(proceso.isResultado()){
+                proceso.setMensaje("proceso correcto");
+            }else{
+                proceso.setMensaje("no se pudo buscar usuarios");
+            }
+        }catch(Exception e){
+            proceso.setResultado(false);
+            proceso.setMensaje("Error al consultar usuarios");
+        }
+        respuesta.setEmpleado(trabajadoresDTO);
+        respuesta.setProceso(proceso);
+        return respuesta;
     }
     
     public static void main(String[] args) {

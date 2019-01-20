@@ -10,6 +10,7 @@ import com.sgcv.dto.EmpleadoDTO;
 import com.sgcv.dto.RespuestaEmpleadoDTO;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,8 +35,6 @@ public class trabajadores_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        listEmpleados = new javax.swing.JList<>();
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         btn_NT = new javax.swing.JButton();
@@ -47,15 +46,10 @@ public class trabajadores_principal extends javax.swing.JFrame {
         btn_inicio = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablaEmpleados = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        listEmpleados.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "LISTA TRABAJADORES", "Trabajador 1", "Trabajador 2", "Trabajador 3", "Trabajador 4" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(listEmpleados);
 
         btn_modificar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_modificar.setText("MODIFICAR");
@@ -133,6 +127,19 @@ public class trabajadores_principal extends javax.swing.JFrame {
         jTextPane1.setText("CALLE JOSE MARIA VELASCO S/N, COL. SAN ANTONIO XAHUENTO, TULTEPEC, ESTADO DE MEXICO, C.P. 54960 CORREO: info@ocsalev.com TELEFONO: 01(55) 50867800");
         jScrollPane2.setViewportView(jTextPane1);
 
+        tablaEmpleados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "RFC", "Nombre", "id"
+            }
+        ));
+        jScrollPane3.setViewportView(tablaEmpleados);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,23 +149,12 @@ public class trabajadores_principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
-                .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btn_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(78, 78, 78)
                 .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(174, 174, 174))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(103, 103, 103)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -168,7 +164,17 @@ public class trabajadores_principal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(btn_inicio)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(86, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(66, 66, 66))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,9 +186,9 @@ public class trabajadores_principal extends javax.swing.JFrame {
                 .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(3, 3, 3)
                 .addComponent(btn_NT, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -215,9 +221,20 @@ public class trabajadores_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_NTActionPerformed
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed
-        trabajadores_vista_datosP tra_vi=new trabajadores_vista_datosP();
-        tra_vi.setVisible(true);
-        this.setVisible(false);
+        
+//        System.out.println(listEmpleados.getSelectedValue());
+        int row= tablaEmpleados.getSelectedRow();
+        System.out.println(""+row);
+        if(row >= 0){
+            tablaEmpleados.getValueAt(row, 2);
+            System.out.println(""+tablaEmpleados.getValueAt(row, 2));
+            EmpleadoDTO empleado = new EmpleadoDTO();
+            empleado.setIdTrabajador(Integer.parseInt(tablaEmpleados.getValueAt(row, 2).toString()));
+            trabajadores_vista_datosP tra_vi=new trabajadores_vista_datosP(empleado);
+            tra_vi.setVisible(true);
+            this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_btn_verActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -239,15 +256,18 @@ public class trabajadores_principal extends javax.swing.JFrame {
     public void llenarTrabajadores(){
         EmpleadosBean empleados = new EmpleadosBean();
         RespuestaEmpleadoDTO empleadosDTO= empleados.getEmpleados();
-        String lista= new String();
-        DefaultListModel listModel = new DefaultListModel();
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("RFC");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Id");
+        tablaEmpleados.setModel(modelo);
+        tablaEmpleados.getColumnModel().getColumn(2).setMinWidth(0);
+        tablaEmpleados.getTableHeader().getColumnModel().getColumn(2).setMaxWidth(0);
+        
         for(EmpleadoDTO empleado: empleadosDTO.getEmpleado()){
-            
-            
-            listModel.addElement(empleado.getIdPersona().getRfc()+"   "+empleado.getIdPersona().getNombre());
-            
+           modelo.addRow(new Object[]{empleado.getIdPersona().getRfc(),empleado.getIdPersona().getNombre(),empleado.getIdTrabajador()});
         }
-        listEmpleados.setModel(listModel);
+//        listEmpleados.setModel(listModel);
     }
     
     /**
@@ -295,9 +315,9 @@ public class trabajadores_principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_ver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JList<String> listEmpleados;
+    private javax.swing.JTable tablaEmpleados;
     // End of variables declaration//GEN-END:variables
 }

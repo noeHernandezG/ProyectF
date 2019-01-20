@@ -26,6 +26,7 @@ public class EmpleadosBean {
     private String urlEstados="http://192.168.56.1:7001/SGCVServicios/resources/gestorEstadosMunicipiosWS/buscarEstados";
     private String urlMunicipios="http://192.168.56.1:7001/SGCVServicios/resources/gestorEstadosMunicipiosWS/buscarMunicipios";
     private String urlEmpleados="http://192.168.56.1:7001/SGCVServicios/resources/gestorTrabajadorWS/buscarEmpleado";
+    private String urlEmpleado="http://192.168.56.1:7001/SGCVServicios/resources/gestorTrabajadorWS/buscarEmpleadoById";
     public String metodo="POST";
     
     public String registrarEmpleado(EmpleadoDTO empleado){
@@ -68,6 +69,19 @@ public class EmpleadosBean {
 //        RespuestaEstadosDTO estados = gson.fromJson(respuesta, RespuestaEstadosDTO.class);
         return empleados;
     }
+    
+    public RespuestaEmpleadoDTO getEmpleado(EmpleadoDTO empleado){
+        Gson gson=new Gson();
+        ClienteREST cliente=new ClienteREST();
+        String request=gson.toJson(empleado);
+        System.out.println(""+request);
+        String response=cliente.getResponseDTO(urlEmpleado, metodo, request);
+        RespuestaEmpleadoDTO empleados=gson.fromJson(response, RespuestaEmpleadoDTO.class);
+//        System.out.println(respuesta);
+//        RespuestaEstadosDTO estados = gson.fromJson(respuesta, RespuestaEstadosDTO.class);
+        return empleados;
+    }
+    
     public static void main(String[] args) {
         EmpleadoDTO empleado= new EmpleadoDTO();
         DireccionDTO direccion= new DireccionDTO();
