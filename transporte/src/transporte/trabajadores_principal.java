@@ -5,6 +5,12 @@
  */
 package transporte;
 
+import com.sgcv.bean.EmpleadosBean;
+import com.sgcv.dto.EmpleadoDTO;
+import com.sgcv.dto.RespuestaEmpleadoDTO;
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author FERRUZ
@@ -16,6 +22,7 @@ public class trabajadores_principal extends javax.swing.JFrame {
      */
     public trabajadores_principal() {
         initComponents();
+        llenarTrabajadores();
     }
 
     /**
@@ -28,7 +35,7 @@ public class trabajadores_principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listEmpleados = new javax.swing.JList<>();
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         btn_NT = new javax.swing.JButton();
@@ -43,12 +50,12 @@ public class trabajadores_principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listEmpleados.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "LISTA TRABAJADORES", "Trabajador 1", "Trabajador 2", "Trabajador 3", "Trabajador 4" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listEmpleados);
 
         btn_modificar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_modificar.setText("MODIFICAR");
@@ -229,6 +236,20 @@ public class trabajadores_principal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    public void llenarTrabajadores(){
+        EmpleadosBean empleados = new EmpleadosBean();
+        RespuestaEmpleadoDTO empleadosDTO= empleados.getEmpleados();
+        String lista= new String();
+        DefaultListModel listModel = new DefaultListModel();
+        for(EmpleadoDTO empleado: empleadosDTO.getEmpleado()){
+            
+            
+            listModel.addElement(empleado.getIdPersona().getRfc()+"   "+empleado.getIdPersona().getNombre());
+            
+        }
+        listEmpleados.setModel(listModel);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -274,9 +295,9 @@ public class trabajadores_principal extends javax.swing.JFrame {
     private javax.swing.JButton btn_ver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JList<String> listEmpleados;
     // End of variables declaration//GEN-END:variables
 }

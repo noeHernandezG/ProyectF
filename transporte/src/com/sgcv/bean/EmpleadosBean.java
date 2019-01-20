@@ -10,6 +10,7 @@ import com.sgcv.dto.DireccionDTO;
 import com.sgcv.dto.EmpleadoDTO;
 import com.sgcv.dto.EstadosDTO;
 import com.sgcv.dto.PersonaDTO;
+import com.sgcv.dto.RespuestaEmpleadoDTO;
 import com.sgcv.dto.RespuestaEstadosDTO;
 import com.sgcv.utils.ClienteREST;
 import java.util.Collections;
@@ -24,6 +25,7 @@ public class EmpleadosBean {
     public String url="http://192.168.56.1:7001/SGCVServicios/resources/gestorTrabajadorWS/guardarEmpleado";
     private String urlEstados="http://192.168.56.1:7001/SGCVServicios/resources/gestorEstadosMunicipiosWS/buscarEstados";
     private String urlMunicipios="http://192.168.56.1:7001/SGCVServicios/resources/gestorEstadosMunicipiosWS/buscarMunicipios";
+    private String urlEmpleados="http://192.168.56.1:7001/SGCVServicios/resources/gestorTrabajadorWS/buscarEmpleado";
     public String metodo="POST";
     
     public String registrarEmpleado(EmpleadoDTO empleado){
@@ -53,6 +55,18 @@ public class EmpleadosBean {
         System.out.println(respuesta);
         RespuestaEstadosDTO estados = gson.fromJson(respuesta, RespuestaEstadosDTO.class);
         return estados;
+    }
+    
+    public RespuestaEmpleadoDTO getEmpleados(){
+        Gson gson=new Gson();
+        ClienteREST cliente=new ClienteREST();
+        String request=gson.toJson(new EmpleadoDTO());
+        System.out.println(""+request);
+        String response=cliente.getResponseDTO(urlEmpleados, metodo, request);
+        RespuestaEmpleadoDTO empleados=gson.fromJson(response, RespuestaEmpleadoDTO.class);
+//        System.out.println(respuesta);
+//        RespuestaEstadosDTO estados = gson.fromJson(respuesta, RespuestaEstadosDTO.class);
+        return empleados;
     }
     public static void main(String[] args) {
         EmpleadoDTO empleado= new EmpleadoDTO();
