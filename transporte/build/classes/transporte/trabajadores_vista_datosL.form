@@ -34,35 +34,35 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel30" min="-2" pref="188" max="-2" attributes="0"/>
+                              <Component id="curptx" min="-2" pref="188" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel31" min="-2" pref="161" max="-2" attributes="0"/>
+                              <Component id="rfctx" min="-2" pref="161" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                              <Component id="jLabel40" min="-2" pref="93" max="-2" attributes="0"/>
+                              <Component id="numemptx" min="-2" pref="93" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="232" max="-2" attributes="0"/>
-                              <Component id="jLabel36" min="-2" pref="154" max="-2" attributes="0"/>
+                              <Component id="puestotx" min="-2" pref="154" max="-2" attributes="0"/>
                               <EmptySpace pref="74" max="32767" attributes="0"/>
-                              <Component id="jLabel37" min="-2" pref="133" max="-2" attributes="0"/>
+                              <Component id="riesgotx" min="-2" pref="133" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel33" min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="ingresotx" min="-2" pref="137" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel35" min="-2" pref="162" max="-2" attributes="0"/>
+                              <Component id="sueldoitx" min="-2" pref="162" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel42" min="-2" pref="151" max="-2" attributes="0"/>
+                              <Component id="periodicidadtx" min="-2" pref="151" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
-                              <Component id="jLabel43" min="-2" pref="97" max="-2" attributes="0"/>
+                              <Component id="sindicalizadotx" min="-2" pref="97" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel39" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="entidadtx" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel41" min="-2" pref="132" max="-2" attributes="0"/>
+                              <Component id="jornadatx" min="-2" pref="132" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel38" min="-2" pref="303" max="-2" attributes="0"/>
+                              <Component id="contratotx" min="-2" pref="303" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -70,13 +70,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel32" min="-2" pref="164" max="-2" attributes="0"/>
+                              <Component id="nsstx" min="-2" pref="164" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                               <Component id="jLabel7" min="-2" pref="207" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="239" max="-2" attributes="0"/>
-                              <Component id="jLabel34" min="-2" pref="132" max="-2" attributes="0"/>
+                              <Component id="sueldobtx" min="-2" pref="132" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
@@ -103,32 +103,32 @@
               <Component id="jLabel7" min="-2" pref="26" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel30" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel31" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel40" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="curptx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="rfctx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="numemptx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel36" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel37" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="nsstx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="puestotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="riesgotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel34" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ingresotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="sueldobtx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="sueldoitx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel42" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel39" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel43" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="periodicidadtx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="entidadtx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="sindicalizadotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel41" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel38" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="jornadatx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="contratotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="26" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -142,7 +142,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel30">
+    <Component class="javax.swing.JLabel" name="curptx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="CURP"/>
@@ -153,7 +153,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel31">
+    <Component class="javax.swing.JLabel" name="rfctx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="RFC"/>
@@ -164,7 +164,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel32">
+    <Component class="javax.swing.JLabel" name="nsstx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="NSS"/>
@@ -175,7 +175,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel33">
+    <Component class="javax.swing.JLabel" name="ingresotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="FECHA INGRESO"/>
@@ -186,7 +186,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel34">
+    <Component class="javax.swing.JLabel" name="sueldobtx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="SUELDO BASE"/>
@@ -197,7 +197,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel35">
+    <Component class="javax.swing.JLabel" name="sueldoitx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="SUELDO DIARIO INTEGRADO"/>
@@ -208,7 +208,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel36">
+    <Component class="javax.swing.JLabel" name="puestotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="PUESTO"/>
@@ -219,7 +219,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel37">
+    <Component class="javax.swing.JLabel" name="riesgotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="RIESGO PUESTO"/>
@@ -230,7 +230,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel38">
+    <Component class="javax.swing.JLabel" name="contratotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TIPO CONTRATO"/>
@@ -241,7 +241,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel39">
+    <Component class="javax.swing.JLabel" name="entidadtx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="ENTIDAD FEDERATIVA"/>
@@ -344,7 +344,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel40">
+    <Component class="javax.swing.JLabel" name="numemptx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="NUM EMPLEADO"/>
@@ -355,7 +355,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel41">
+    <Component class="javax.swing.JLabel" name="jornadatx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TIPO JORNADA"/>
@@ -366,7 +366,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel42">
+    <Component class="javax.swing.JLabel" name="periodicidadtx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="PERIODICIDAD PAGO"/>
@@ -377,7 +377,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel43">
+    <Component class="javax.swing.JLabel" name="sindicalizadotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="SINDICALIZADO"/>
