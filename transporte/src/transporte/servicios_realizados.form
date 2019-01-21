@@ -38,9 +38,9 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-              <Component id="jLabel31" min="-2" pref="193" max="-2" attributes="0"/>
+              <Component id="rfctx" min="-2" pref="193" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel24" min="-2" pref="160" max="-2" attributes="0"/>
+              <Component id="telefonotx" min="-2" pref="160" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
@@ -52,17 +52,17 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel27" min="-2" pref="187" max="-2" attributes="0"/>
-                          <Component id="jLabel30" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="fechaactualtx" min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="fecharealizaciontx" min="-2" pref="164" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel40" min="-2" pref="184" max="-2" attributes="0"/>
+                              <Component id="horarealizaciontx" min="-2" pref="184" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel28" min="-2" pref="187" max="-2" attributes="0"/>
+                              <Component id="horaactualtx" min="-2" pref="187" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -73,33 +73,33 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel35" min="-2" pref="153" max="-2" attributes="0"/>
+                      <Component id="camiontx" min="-2" pref="153" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel41" min="-2" pref="133" max="-2" attributes="0"/>
+                      <Component id="placastx" min="-2" pref="133" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="jLabel36" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="cargatx" min="-2" pref="150" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel37" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="subtotaltx" min="-2" pref="114" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="jLabel38" min="-2" pref="82" max="-2" attributes="0"/>
+                              <Component id="ivatx" min="-2" pref="82" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jLabel32" min="-2" pref="193" max="-2" attributes="0"/>
+                          <Component id="origentx" min="-2" pref="193" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                              <Component id="jLabel33" max="32767" attributes="0"/>
+                              <Component id="destinotx" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                              <Component id="jLabel42" min="-2" pref="97" max="-2" attributes="0"/>
+                              <Component id="isrtx" min="-2" pref="97" max="-2" attributes="0"/>
                               <EmptySpace pref="56" max="32767" attributes="0"/>
-                              <Component id="jLabel39" min="-2" pref="123" max="-2" attributes="0"/>
+                              <Component id="serviciotx" min="-2" pref="123" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -107,12 +107,12 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jLabel29" min="-2" pref="303" max="-2" attributes="0"/>
+                              <Component id="nombretx" min="-2" pref="303" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="btn_inicio" min="-2" pref="36" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel6" min="-2" pref="303" max="-2" attributes="0"/>
+                              <Component id="empresatx" min="-2" pref="303" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -122,8 +122,10 @@
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
               <Component id="btn_calcular" min="-2" pref="120" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+              <Component id="btn_ver" min="-2" pref="120" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -145,49 +147,52 @@
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jLabel6" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="empresatx" min="-2" pref="26" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" pref="19" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <Component id="jLabel29" min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="nombretx" min="-2" pref="25" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel31" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel24" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="rfctx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="telefonotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel27" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel28" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="fechaactualtx" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="horaactualtx" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel30" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel40" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="fecharealizaciontx" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="horarealizaciontx" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel41" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel36" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="camiontx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="placastx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="cargatx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="origentx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="destinotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel37" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel38" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel39" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel42" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="subtotaltx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ivatx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="serviciotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="isrtx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-              <Component id="btn_calcular" min="-2" pref="27" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btn_calcular" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="btn_ver" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btn_regresar" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="btn_salir" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
@@ -200,7 +205,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="empresatx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="NOMBRE EMPRESA"/>
@@ -211,7 +216,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel24">
+    <Component class="javax.swing.JLabel" name="telefonotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TELEFONO"/>
@@ -222,7 +227,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel31">
+    <Component class="javax.swing.JLabel" name="rfctx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="RFC"/>
@@ -249,7 +254,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_regresarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel27">
+    <Component class="javax.swing.JLabel" name="fechaactualtx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="FECHA ACTUAL"/>
@@ -260,7 +265,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel28">
+    <Component class="javax.swing.JLabel" name="horaactualtx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="HORA ACTUAL"/>
@@ -271,7 +276,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel30">
+    <Component class="javax.swing.JLabel" name="fecharealizaciontx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="FECHA REALIZACION"/>
@@ -282,7 +287,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel32">
+    <Component class="javax.swing.JLabel" name="origentx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="CIUDAD ORIGEN"/>
@@ -293,7 +298,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel33">
+    <Component class="javax.swing.JLabel" name="destinotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="CIUDAD DESTINO"/>
@@ -315,7 +320,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel35">
+    <Component class="javax.swing.JLabel" name="camiontx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TIPO CAMION"/>
@@ -326,7 +331,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel36">
+    <Component class="javax.swing.JLabel" name="cargatx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TIPO CARGA"/>
@@ -337,7 +342,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel37">
+    <Component class="javax.swing.JLabel" name="subtotaltx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="SUB TOTAL"/>
@@ -348,7 +353,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel38">
+    <Component class="javax.swing.JLabel" name="ivatx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="IVA"/>
@@ -359,7 +364,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel39">
+    <Component class="javax.swing.JLabel" name="serviciotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="TOTAL SERVICIO"/>
@@ -456,7 +461,7 @@
         <Property name="text" type="java.lang.String" value="O"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel29">
+    <Component class="javax.swing.JLabel" name="nombretx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="NOMBRE CLIENTE"/>
@@ -467,7 +472,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel40">
+    <Component class="javax.swing.JLabel" name="horarealizaciontx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="HORA REALIZACION"/>
@@ -478,7 +483,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel41">
+    <Component class="javax.swing.JLabel" name="placastx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="PLACAS"/>
@@ -489,7 +494,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel42">
+    <Component class="javax.swing.JLabel" name="isrtx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="ISR"/>
@@ -514,6 +519,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_calcularActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_ver">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="11" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="VER COSTOS"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_verActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
