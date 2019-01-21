@@ -205,9 +205,18 @@ public class trabajadores_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
-        trabajadores_modificar_datosP tra_mo=new trabajadores_modificar_datosP();
-        tra_mo.setVisible(true);
-        this.setVisible(false);
+        int row= tablaEmpleados.getSelectedRow();
+        System.out.println(""+row);
+        if(row >= 0){
+            tablaEmpleados.getValueAt(row, 2);
+            System.out.println(""+tablaEmpleados.getValueAt(row, 2));
+            EmpleadoDTO empleado = new EmpleadoDTO();
+            empleado.setIdTrabajador(Integer.parseInt(tablaEmpleados.getValueAt(row, 2).toString()));
+            trabajadores_modificar_datosP tra_mo=new trabajadores_modificar_datosP(empleado);
+            tra_mo.setVisible(true);
+            this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_btn_modificarActionPerformed
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
