@@ -320,7 +320,7 @@ public class trabajadores_vista_datosP extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_pdfActionPerformed
 
     private void btn_masdatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masdatosActionPerformed
-      trabajadores_vista_datosL tra_vis_dL=new trabajadores_vista_datosL();
+      trabajadores_vista_datosL tra_vis_dL=new trabajadores_vista_datosL(empleado);
         tra_vis_dL.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_masdatosActionPerformed
