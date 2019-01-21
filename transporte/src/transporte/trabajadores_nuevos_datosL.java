@@ -405,9 +405,8 @@ public class trabajadores_nuevos_datosL extends javax.swing.JFrame {
             }else if(sueldo_base.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el sueldo base");
         }else if(sueldo_diario.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Ingrese el sueldo diario");
-            
-            }else{
+            JOptionPane.showMessageDialog(this,"Ingrese el sueldo diario"); 
+        }else{
             empleado.getIdPersona().setCurp(ingreso_curp.getText());
             empleado.getIdPersona().setRfc(ingreso_rfc.getText());
             empleado.setNssTrabajador(ingreso_nss.getText());
