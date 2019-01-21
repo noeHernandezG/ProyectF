@@ -3,6 +3,7 @@ package transporte;
 import com.sgcv.bean.EmpleadosBean;
 import com.sgcv.dto.EmpleadoDTO;
 import com.sgcv.dto.RespuestaEmpleadoDTO;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -56,7 +57,7 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         licenciatx = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
-        vigencialtx = new javax.swing.JTextField();
+        vigenciatx = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         btn_salir = new javax.swing.JButton();
         btn_guardar = new javax.swing.JButton();
@@ -143,7 +144,7 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
         jLabel29.setText("VIGENCIA LICENCIA:");
         jLabel29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        vigencialtx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        vigenciatx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("DATOS PERSONALES TRABAJADOR");
@@ -285,7 +286,7 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel29)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(vigencialtx, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(vigenciatx, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -405,7 +406,7 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(licenciatx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(vigencialtx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(vigenciatx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -443,17 +444,68 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_GyCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GyCActionPerformed
+         if(nombretx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su nombre o nombres");
+        }else if(apaternotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su apellido paterno");
+        }else if(amaternotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su apellido materno");
+        }else if(telefonotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su numero de telefono");
+        }else if(correotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su correo electronico");        
+            } else if(nacimientotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su fecha de nacimiento");
+        }else if(licenciatx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su numero de licencia");
+        }else if(vigenciatx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese la vigencia de la licencia");
+        } else if(calletx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese nombre de calle");
+        }else if(numerotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su numero de casa mz y lt");
+        } else if(coloniatx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su colonia");
+        }else if(cptx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese codigo postal");
+        }
+        else{
         trabajadores_modificar_datosL tra_mod_dL=new trabajadores_modificar_datosL();
         tra_mod_dL.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_GyCActionPerformed
-
+    }
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         
+        if(nombretx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su nombre o nombres");
+        }else if(apaternotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su apellido paterno");
+        }else if(amaternotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su apellido materno");
+        }else if(telefonotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su numero de telefono");
+        }else if(correotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su correo electronico");        
+            } else if(nacimientotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su fecha de nacimiento");
+        }else if(licenciatx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su numero de licencia");
+        }else if(vigenciatx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese la vigencia de la licencia");
+        } else if(calletx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese nombre de calle");
+        }else if(numerotx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su numero de casa mz y lt");
+        } else if(coloniatx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese su colonia");
+        }else if(cptx.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese codigo postal");
+        }
     }//GEN-LAST:event_btn_guardarActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
@@ -480,13 +532,13 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
         licenciatx.setText(empleado.getNumeroLicencia());
 //        rfctx.setText(empleado.getIdPersona().getRfc());
         correotx.setText(empleado.getIdPersona().getCorreo());
-        vigencialtx.setText(empleado.getVigenciaLicencia());
+        vigenciatx.setText(empleado.getVigenciaLicencia());
         calletx.setText(empleado.getIdDireccion().getCalle());
         numerotx.setText(empleado.getIdDireccion().getNumero());
         coloniatx.setText(empleado.getIdDireccion().getColonia());
 //        municipiotx.setText(empleado.getIdDireccion().getMunicipio());
 //        entidadtx.setText(empleado.getIdDireccion().getEntidadFederativa());
-        
+        cptx.setText(empleado.getIdDireccion().getCp());
         System.out.println(empleado.getFechaIngreso());
     }
     /**
@@ -545,6 +597,6 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
     private javax.swing.JTextField numerotx;
     private javax.swing.JComboBox<String> sexotx;
     private javax.swing.JTextField telefonotx;
-    private javax.swing.JTextField vigencialtx;
+    private javax.swing.JTextField vigenciatx;
     // End of variables declaration//GEN-END:variables
 }

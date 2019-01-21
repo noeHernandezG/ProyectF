@@ -34,15 +34,15 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel32" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_nss" min="-2" pref="132" max="-2" attributes="0"/>
+                      <Component id="nsstx" min="-2" pref="132" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel40" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="num_empleado" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="empleadotx" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel36" min="-2" pref="68" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_puesto" max="32767" attributes="0"/>
+                      <Component id="puestotx" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -73,13 +73,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel33" min="-2" pref="103" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_fecha" min="-2" pref="130" max="-2" attributes="0"/>
+                      <Component id="fechaingresotx" min="-2" pref="130" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" pref="77" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel37" min="-2" pref="103" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_riesgo" min="-2" pref="96" max="-2" attributes="0"/>
+                      <Component id="riesgotx" min="-2" pref="96" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -87,29 +87,29 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel30" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="ingreso_curp" min="-2" pref="192" max="-2" attributes="0"/>
+                              <Component id="curptx" min="-2" pref="192" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel31" min="-2" pref="50" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="ingreso_rfc" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="rfctx" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel34" min="-2" pref="81" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="sueldo_base" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="basetx" min="-2" pref="115" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="jLabel35" min="-2" pref="162" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="sueldo_diario" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="integradotx" min="-2" pref="110" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel38" min="-2" pref="97" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="ingreso_contrato" min="-2" pref="190" max="-2" attributes="0"/>
+                              <Component id="contratotx" min="-2" pref="190" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jLabel39" min="-2" pref="121" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ingreso_entidad" min="-2" max="-2" attributes="0"/>
+                              <Component id="entidadtx" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -119,13 +119,13 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="ingreso_jornada" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="jornadatx" min="-2" pref="123" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel42" min="-2" pref="122" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="ingreso_pago" min="-2" pref="123" max="-2" attributes="0"/>
+                                      <Component id="pagotx" min="-2" pref="123" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="ingreso_sindico" min="-2" max="-2" attributes="0"/>
+                                  <Component id="sindicotx" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -150,25 +150,25 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel30" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_curp" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="curptx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel31" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_rfc" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="rfctx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_nss" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="nsstx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel40" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="num_empleado" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="empleadotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel36" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_puesto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="puestotx" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ingreso_riesgo" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="riesgotx" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="ingreso_fecha" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="fechaingresotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel37" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
@@ -176,28 +176,28 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel34" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="sueldo_base" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="sueldo_diario" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="basetx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="integradotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel38" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_contrato" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="contratotx" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel39" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_entidad" alignment="3" max="32767" attributes="0"/>
+                  <Component id="entidadtx" alignment="3" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel41" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_jornada" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jornadatx" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel42" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_pago" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pagotx" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel43" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_sindico" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="sindicotx" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -239,7 +239,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_curp">
+    <Component class="javax.swing.JTextField" name="curptx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -259,7 +259,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_rfc">
+    <Component class="javax.swing.JTextField" name="rfctx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -279,7 +279,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_nss">
+    <Component class="javax.swing.JTextField" name="nsstx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -299,7 +299,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_fecha">
+    <Component class="javax.swing.JTextField" name="fechaingresotx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -319,7 +319,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sueldo_base">
+    <Component class="javax.swing.JTextField" name="basetx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -339,7 +339,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sueldo_diario">
+    <Component class="javax.swing.JTextField" name="integradotx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -477,7 +477,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_entidad">
+    <Component class="javax.swing.JComboBox" name="entidadtx">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="33">
@@ -543,7 +543,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JComboBox" name="ingreso_riesgo">
+    <Component class="javax.swing.JComboBox" name="riesgotx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -562,7 +562,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_puesto">
+    <Component class="javax.swing.JComboBox" name="puestotx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -590,7 +590,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="num_empleado">
+    <Component class="javax.swing.JTextField" name="empleadotx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -599,7 +599,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_contrato">
+    <Component class="javax.swing.JComboBox" name="contratotx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -636,7 +636,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_jornada">
+    <Component class="javax.swing.JComboBox" name="jornadatx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -669,7 +669,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_pago">
+    <Component class="javax.swing.JComboBox" name="pagotx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -703,7 +703,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_sindico">
+    <Component class="javax.swing.JComboBox" name="sindicotx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
