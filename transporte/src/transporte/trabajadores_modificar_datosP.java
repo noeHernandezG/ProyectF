@@ -443,7 +443,7 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_GyCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GyCActionPerformed
-         trabajadores_modificar_datosL tra_mod_dL=new trabajadores_modificar_datosL();
+        trabajadores_modificar_datosL tra_mod_dL=new trabajadores_modificar_datosL();
         tra_mod_dL.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_GyCActionPerformed

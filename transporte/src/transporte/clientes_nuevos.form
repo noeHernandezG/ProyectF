@@ -31,11 +31,11 @@
           <Group type="102" attributes="0">
               <Component id="jLabel27" min="-2" pref="101" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="nombre_cliente" max="32767" attributes="0"/>
+              <Component id="nombre" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel28" min="-2" pref="70" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="ap_cliente" min="-2" pref="147" max="-2" attributes="0"/>
+              <Component id="ap" min="-2" pref="147" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
@@ -49,25 +49,25 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel6" min="-2" pref="114" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_empresa" min="-2" pref="332" max="-2" attributes="0"/>
+                      <Component id="empresa" min="-2" pref="332" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel30" min="-2" pref="70" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="am_cliente" min="-2" pref="159" max="-2" attributes="0"/>
+                      <Component id="am" min="-2" pref="159" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jLabel31" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_rfc" min="-2" pref="170" max="-2" attributes="0"/>
+                      <Component id="rfc" min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel24" min="-2" pref="70" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_tel1" min="-2" pref="157" max="-2" attributes="0"/>
+                      <Component id="tel1" min="-2" pref="157" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel26" min="-2" pref="80" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_tel2" min="-2" pref="157" max="-2" attributes="0"/>
+                      <Component id="tel2" min="-2" pref="157" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
@@ -80,26 +80,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel25" min="-2" pref="133" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="ingreso_correo" min="-2" pref="232" max="-2" attributes="0"/>
+                      <Component id="correo" min="-2" pref="232" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel33" min="-2" pref="64" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_colonia" min="-2" pref="147" max="-2" attributes="0"/>
+                      <Component id="colonia" min="-2" pref="147" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel34" min="-2" pref="74" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ingreso_municipio" min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="municipio" min="-2" pref="173" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel29" min="-2" pref="44" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ingreso_calle" min="-2" pref="224" max="-2" attributes="0"/>
+                          <Component id="calle" min="-2" pref="224" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jLabel32" min="-2" pref="64" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="ingreso_numero" min="-2" pref="147" max="-2" attributes="0"/>
+                          <Component id="numero" min="-2" pref="147" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
@@ -112,7 +112,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabel35" min="-2" pref="133" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="ingreso_entidad" min="-2" pref="173" max="-2" attributes="0"/>
+                                  <Component id="entidad" min="-2" pref="173" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -120,7 +120,7 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="btn_salir" min="-2" pref="109" max="-2" attributes="0"/>
-                              <Component id="ingreso_cp" min="-2" pref="121" max="-2" attributes="0"/>
+                              <Component id="cp" min="-2" pref="121" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -144,7 +144,7 @@
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ingreso_empresa" min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="empresa" min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -152,54 +152,54 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel27" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="nombre_cliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="nombre" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel28" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ap_cliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="ap" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel30" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="am_cliente" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="am" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel31" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_rfc" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="rfc" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel24" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_tel1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="tel1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel26" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_tel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="tel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel25" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_correo" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="correo" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel8" min="-2" pref="19" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel29" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_calle" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="calle" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_numero" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="numero" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_colonia" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="colonia" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel34" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingreso_municipio" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="municipio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="ingreso_entidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="entidad" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel36" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="ingreso_cp" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="cp" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
@@ -226,7 +226,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_empresa">
+    <Component class="javax.swing.JTextField" name="empresa">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -234,9 +234,6 @@
           </Border>
         </Property>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ingreso_empresaActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
@@ -260,7 +257,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_tel1">
+    <Component class="javax.swing.JTextField" name="tel1">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -280,7 +277,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_correo">
+    <Component class="javax.swing.JTextField" name="correo">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -300,7 +297,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_tel2">
+    <Component class="javax.swing.JTextField" name="tel2">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -309,7 +306,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_calle">
+    <Component class="javax.swing.JTextField" name="calle">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -340,7 +337,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_rfc">
+    <Component class="javax.swing.JTextField" name="rfc">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -456,7 +453,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nombre_cliente">
+    <Component class="javax.swing.JTextField" name="nombre">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -476,7 +473,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ap_cliente">
+    <Component class="javax.swing.JTextField" name="ap">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -496,7 +493,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="am_cliente">
+    <Component class="javax.swing.JTextField" name="am">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -522,7 +519,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_numero">
+    <Component class="javax.swing.JTextField" name="numero">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -542,7 +539,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_colonia">
+    <Component class="javax.swing.JTextField" name="colonia">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -584,7 +581,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingreso_cp">
+    <Component class="javax.swing.JTextField" name="cp">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -593,7 +590,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_municipio">
+    <Component class="javax.swing.JComboBox" name="municipio">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
@@ -603,7 +600,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="ingreso_entidad">
+    <Component class="javax.swing.JComboBox" name="entidad">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="0"/>
