@@ -461,7 +461,7 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
 
     private void btn_GyCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GyCActionPerformed
             
-        trabajadores_modificar_datosL tra_mod_dL=new trabajadores_modificar_datosL(empleado);
+//        trabajadores_modificar_datosL tra_mod_dL=new trabajadores_modificar_datosL(empleado);
          if(nombretx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese su nombre o nombres");
         }else if(apaternotx.getText().equals("")){
@@ -513,8 +513,9 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
             empleado.setIdDireccion(direccion);
             EmpleadosBean empleados= new EmpleadosBean();
             RespuestaEmpleadoDTO empleadoR=empleados.actualizaEmpleado(empleado);
-            trabajadores_nuevos_datosL tra_nue_dL = new trabajadores_nuevos_datosL(empleado);
-            tra_nue_dL.setVisible(true);
+//            trabajadores_nuevos_datosL tra_nue_dL = new trabajadores_nuevos_datosL(empleado);}
+trabajadores_modificar_datosL tra_mod_dL=new trabajadores_modificar_datosL(empleado);
+            tra_mod_dL.setVisible(true);
             this.setVisible(false);
         }
         
@@ -550,6 +551,32 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Ingrese su colonia");
         }else if(cptx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese codigo postal");
+        }else{
+            PersonaDTO persona= empleado.getIdPersona();
+//            EmpleadoDTO empleado= new EmpleadoDTO();
+            persona.setNombre(nombretx.getText());
+            persona.setaMaterno(amaternotx.getText());
+            persona.setaPaterno(apaternotx.getText());
+            persona.setTelefono1(telefonotx.getText());
+            persona.setCorreo(correotx.getText());
+            persona.setFechaNacimiento(nacimientotx.getText());
+            persona.setSexo(sexotx.getSelectedItem().toString());
+            
+            
+            DireccionDTO direccion = empleado.getIdDireccion();
+            direccion.setCalle(calletx.getText());
+            direccion.setNumero(numerotx.getText());
+            direccion.setColonia(coloniatx.getText());
+            direccion.setMunicipio(municipiotx.getSelectedItem().toString());
+            direccion.setEntidadFederativa(entidadtx.getSelectedItem().toString());
+            direccion.setCp(cptx.getText());
+            
+            empleado.setNumeroLicencia(licenciatx.getText());
+            empleado.setVigenciaLicencia(vigenciatx.getText());
+            empleado.setIdPersona(persona);
+            empleado.setIdDireccion(direccion);
+            EmpleadosBean empleados= new EmpleadosBean();
+            RespuestaEmpleadoDTO empleadoR=empleados.actualizaEmpleado(empleado);
         }
     }//GEN-LAST:event_btn_guardarActionPerformed
 
@@ -589,7 +616,7 @@ public class trabajadores_modificar_datosP extends javax.swing.JFrame {
         coloniatx.setText(empleado.getIdDireccion().getColonia());
         municipiotx.setSelectedItem(empleado.getIdDireccion().getMunicipio());
         entidadtx.setSelectedItem(empleado.getIdDireccion().getEntidadFederativa());
-
+        cptx.setText(empleado.getIdDireccion().getCp());
         System.out.println(empleado.getFechaIngreso());
     }
     
