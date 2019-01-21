@@ -121,6 +121,9 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel42" min="-2" pref="122" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="periodicidadtx" min="-2" pref="123" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="sindicalizadotx" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -154,22 +157,23 @@
                   <Component id="jLabel32" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="nsstx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel40" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="numemptx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel36" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="puestotx" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel33" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                                      <Component id="periodicidadtx" min="-2" pref="123" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="sindicalizadotx" min="-2" max="-2" attributes="0"/>
+                  <Component id="ingresotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jLabel37" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="riesgotx" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel34" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="numemptx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="sueldobtx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="sueldoitx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -183,11 +187,12 @@
                   <Component id="jLabel41" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="jornadatx" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel42" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="ingresotx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="periodicidadtx" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel43" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                  <Component id="sindicalizadotx" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -289,9 +294,7 @@
         </Property>
       </Properties>
     </Component>
-                  <Component id="sueldobtx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="jLabel35" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="sueldoitx" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+    <Component class="javax.swing.JTextField" name="ingresotx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -311,7 +314,7 @@
         </Property>
       </Properties>
     </Component>
-                  <Component id="periodicidadtx" alignment="3" min="-2" max="-2" attributes="0"/>
+    <Component class="javax.swing.JTextField" name="sueldobtx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -331,7 +334,7 @@
         </Property>
       </Properties>
     </Component>
-                  <Component id="sindicalizadotx" alignment="3" min="-2" max="-2" attributes="0"/>
+    <Component class="javax.swing.JTextField" name="sueldoitx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -582,7 +585,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="ingresotx">
+    <Component class="javax.swing.JTextField" name="numemptx">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -661,7 +664,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sueldobtx">
+    <Component class="javax.swing.JComboBox" name="periodicidadtx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -695,7 +698,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="sueldoitx">
+    <Component class="javax.swing.JComboBox" name="sindicalizadotx">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Arial" size="12" style="1"/>
@@ -713,4 +716,3 @@
     </Component>
   </SubComponents>
 </Form>
-    <Component class="javax.swing.JTextField" name="numemptx">

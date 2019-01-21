@@ -11,8 +11,17 @@ package com.sgcv.dto;
  */
 public class ClienteDTO {
     
+    private Integer idCliente;
     PersonaDTO persona;
     DireccionDTO direccion;
+
+    public Integer getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(Integer idCliente) {
+        this.idCliente = idCliente;
+    }
 
     public PersonaDTO getPersona() {
         return persona;
@@ -29,6 +38,5 @@ public class ClienteDTO {
     public void setDireccion(DireccionDTO direccion) {
         this.direccion = direccion;
     }
-    
     
 }

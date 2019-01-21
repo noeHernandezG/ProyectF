@@ -8,6 +8,7 @@ package com.sgcv.dao;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -42,10 +43,10 @@ public class Cliente implements Serializable {
     @Column(name = "id_cliente")
     private Integer idCliente;
     @JoinColumn(name = "id_direccion", referencedColumnName = "id_direccion")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Direccion idDireccion;
     @JoinColumn(name = "id_persona", referencedColumnName = "id_persona")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Persona idPersona;
     @OneToMany(mappedBy = "idCliente", fetch = FetchType.LAZY)
     private List<Servicio> servicioList;

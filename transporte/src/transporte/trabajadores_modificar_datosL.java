@@ -1,6 +1,15 @@
 package transporte;
 
+import com.sgcv.bean.EmpleadosBean;
+import com.sgcv.dto.EmpleadoDTO;
+import com.sgcv.dto.RespuestaEmpleadoDTO;
 import javax.swing.JOptionPane;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
@@ -11,9 +20,18 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
     /**
      * Creates new form vista_trabajador
      */
+    EmpleadoDTO empleado;
     public trabajadores_modificar_datosL() {
         initComponents();
     }
+
+    public trabajadores_modificar_datosL(EmpleadoDTO empleado) {
+        this.empleado = empleado;
+        initComponents();
+        llenarDatos();
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,11 +50,11 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
         jLabel32 = new javax.swing.JLabel();
         nsstx = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        fechaingresotx = new javax.swing.JTextField();
+        ingresotx = new javax.swing.JTextField();
         jLabel34 = new javax.swing.JLabel();
-        basetx = new javax.swing.JTextField();
+        sueldobtx = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
-        integradotx = new javax.swing.JTextField();
+        sueldoitx = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
@@ -50,17 +68,17 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
         entidadtx = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        riesgotx = new javax.swing.JComboBox<>();
         puestotx = new javax.swing.JComboBox<>();
         jLabel40 = new javax.swing.JLabel();
-        empleadotx = new javax.swing.JTextField();
+        numemptx = new javax.swing.JTextField();
         contratotx = new javax.swing.JComboBox<>();
         jLabel41 = new javax.swing.JLabel();
         jornadatx = new javax.swing.JComboBox<>();
         jLabel42 = new javax.swing.JLabel();
-        pagotx = new javax.swing.JComboBox<>();
+        periodicidadtx = new javax.swing.JComboBox<>();
         jLabel43 = new javax.swing.JLabel();
-        sindicotx = new javax.swing.JComboBox<>();
+        sindicalizadotx = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,19 +113,19 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
         jLabel33.setText("FECHA INGRESO:");
         jLabel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        fechaingresotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ingresotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("SUELDO BASE:");
         jLabel34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        basetx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        sueldobtx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("SUELDO DIARIO INTEGRADO:");
         jLabel35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        integradotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        sueldoitx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel36.setText("PUESTO:");
@@ -171,8 +189,8 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
         jTextPane1.setText("CALLE JOSE MARIA VELASCO S/N, COL. SAN ANTONIO XAHUENTO, TULTEPEC, ESTADO DE MEXICO, C.P. 54960 CORREO: info@ocsalev.com TELEFONO: 01(55) 50867800");
         jScrollPane1.setViewportView(jTextPane1);
 
-        jComboBox2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-Clase I", "2-Clase II", "3-Clase III", "4-Clase IV", "5-Clase V" }));
+        riesgotx.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        riesgotx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1-Clase I", "2-Clase II", "3-Clase III", "4-Clase IV", "5-Clase V" }));
 
         puestotx.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         puestotx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-PUESTO1", "02-PUESTO2", "03-PUESTO3" }));
@@ -181,7 +199,7 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
         jLabel40.setText("NUM EMPLEADO:");
         jLabel40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        empleadotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        numemptx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         contratotx.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         contratotx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Contrato de trabajo por tiempo indeterminado", "02-Contrato de trabajo para obra determinada", "03-Contrato de trabajo por tiempo determinado", "04-Contrato de trabajo por temporada", "05-Contrato de trabajo sujeto a prueba", "06-Contrato de trabajo con capacitacion inicial", "07-Modalidad de contratacion por pago de hora laborada", "08-Modalidad de trabajo por comision laboral", "09-Modalidad de contratacion donde no existe relacion de trabajo", "10-Jubilacion", "pension", "retiro" }));
@@ -197,15 +215,15 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
         jLabel42.setText("PERIODICIDAD PAGO:");
         jLabel42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        pagotx.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        pagotx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Diario", "02-Semanal", "03-Catorcenal", "04-Quincenal", "05-Mensual", "06-Bimestral", "07-Unidad obra", "08-Comision", "09-Precio alzado" }));
+        periodicidadtx.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        periodicidadtx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01-Diario", "02-Semanal", "03-Catorcenal", "04-Quincenal", "05-Mensual", "06-Bimestral", "07-Unidad obra", "08-Comision", "09-Precio alzado" }));
 
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("SINDICALIZADO:");
         jLabel43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        sindicotx.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        sindicotx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
+        sindicalizadotx.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        sindicalizadotx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,7 +243,7 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(empleadotx, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(numemptx, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -264,19 +282,19 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(fechaingresotx, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ingresotx, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(riesgotx, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(basetx, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(sueldobtx, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
                                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(integradotx, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(sueldoitx, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -296,8 +314,8 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(pagotx, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(sindicotx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(periodicidadtx, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(sindicalizadotx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 25, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -321,21 +339,21 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nsstx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(empleadotx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(numemptx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(puestotx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fechaingresotx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ingresotx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(riesgotx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(basetx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sueldobtx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(integradotx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sueldoitx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -347,11 +365,11 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
                     .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jornadatx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pagotx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(periodicidadtx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sindicotx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sindicalizadotx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -371,16 +389,38 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Ingrese su rfc ");
         }else if(nsstx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese su numero de seguridad social");
-        }else if(empleadotx.getText().equals("")){
+        }else if(numemptx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el numero de empleado");
-        }else if(fechaingresotx.getText().equals("")){
+        }else if(ingresotx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese la fecha de ingreso");
         }else if(basetx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el sueldo base");
-        }else if(integradotx.getText().equals("")){
+        }else if(sueldoitx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el sueldo diario integrado");
             
+            }else{
+                empleado.getIdPersona().setCurp(curptx.getText());
+            empleado.getIdPersona().setRfc(ingresotx.getText());
+            empleado.setNssTrabajador(nsstx.getText());
+            empleado.setNumeroEmpleado(numemptx.getText());
+            empleado.setPuesto(puestotx.getSelectedItem().toString());
+            empleado.setFechaIngreso(ingresotx.getText());
+            empleado.setRiesgoTrabajo(riesgotx.getSelectedItem().toString());
+            empleado.setSueldo(Integer.parseInt(sueldobtx.getText()));
+            empleado.setSueldoIntegrado(Integer.parseInt(sueldoitx.getText()));
+            empleado.setTipoContrato(contratotx.getSelectedItem().toString());
+            empleado.setLocalidadLaboral(entidadtx.getSelectedItem().toString());
+            empleado.setTipoJornada(jornadatx.getSelectedItem().toString());
+            empleado.setPeriodicidad(periodicidadtx.getSelectedItem().toString());
+            if(sindicalizadotx.getSelectedItem().toString().equals("NO")){
+                empleado.setSindicalizado(false);
+            }else{
+                empleado.setSindicalizado(true);
             }
+            EmpleadosBean empleadoB = new EmpleadosBean();
+            RespuestaEmpleadoDTO respuesta = empleadoB.actualizaEmpleado(empleado);
+            JOptionPane.showMessageDialog(this,respuesta.getProceso().getMensaje());
+        }
         
     }//GEN-LAST:event_btn_guardarActionPerformed
 
@@ -389,7 +429,7 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
-        trabajadores_modificar_datosP tra_mod_dP=new trabajadores_modificar_datosP();
+        trabajadores_modificar_datosP tra_mod_dP=new trabajadores_modificar_datosP(empleado);
         tra_mod_dP.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_regresarActionPerformed
@@ -400,6 +440,23 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    public void llenarDatos(){
+        curptx.setText(empleado.getIdPersona().getCurp());
+        rfctx.setText(empleado.getIdPersona().getRfc());
+        numemptx.setText(empleado.getNumeroEmpleado());
+        nsstx.setText(empleado.getNssTrabajador());
+        puestotx.setSelectedItem(empleado.getPuesto());
+        riesgotx.setSelectedItem(empleado.getRiesgoTrabajo());
+        ingresotx.setText(empleado.getFechaIngreso());
+        sueldobtx.setText(""+empleado.getSueldo());
+        sueldoitx.setText(""+empleado.getSueldoIntegrado());
+        periodicidadtx.setSelectedItem(empleado.getPeriodicidad());
+        sindicalizadotx.setSelectedItem(""+empleado.getSindicalizado());
+        entidadtx.setSelectedItem(empleado.getLocalidadLaboral());
+//        entidadtx.setSelectedItem("CAMPECHE");
+        jornadatx.setSelectedItem(empleado.getTipoJornada());
+        contratotx.setSelectedItem(empleado.getTipoContrato());
+    }
     /**
      * @param args the command line arguments
      */
@@ -420,11 +477,8 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
     private javax.swing.JButton btn_salir;
     private javax.swing.JComboBox<String> contratotx;
     private javax.swing.JTextField curptx;
-    private javax.swing.JTextField empleadotx;
     private javax.swing.JComboBox<String> entidadtx;
-    private javax.swing.JTextField fechaingresotx;
-    private javax.swing.JTextField integradotx;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JTextField ingresotx;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel30;
@@ -446,9 +500,13 @@ public class trabajadores_modificar_datosL extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane1;
     private javax.swing.JComboBox<String> jornadatx;
     private javax.swing.JTextField nsstx;
-    private javax.swing.JComboBox<String> pagotx;
+    private javax.swing.JTextField numemptx;
+    private javax.swing.JComboBox<String> periodicidadtx;
     private javax.swing.JComboBox<String> puestotx;
     private javax.swing.JTextField rfctx;
-    private javax.swing.JComboBox<String> sindicotx;
+    private javax.swing.JComboBox<String> riesgotx;
+    private javax.swing.JComboBox<String> sindicalizadotx;
+    private javax.swing.JTextField sueldobtx;
+    private javax.swing.JTextField sueldoitx;
     // End of variables declaration//GEN-END:variables
 }

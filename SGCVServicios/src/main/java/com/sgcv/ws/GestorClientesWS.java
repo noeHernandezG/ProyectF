@@ -5,6 +5,9 @@
  */
 package com.sgcv.ws;
 
+import com.sgcv.bean.GestorClientesBean;
+import com.sgcv.dto.ClienteDTO;
+import com.sgcv.dto.RespuestaClientesDTO;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -32,24 +35,46 @@ public class GestorClientesWS {
     public GestorClientesWS() {
     }
 
-    /**
-     * Retrieves representation of an instance of com.sgcv.bean.GestorClientesWS
-     * @return an instance of java.lang.String
-     */
-//    @GET
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public String getJson() {
-//        //TODO return proper representation object
-//        throw new UnsupportedOperationException();
-//    }
-
     @POST
-    @Path("buscarClientes")
+    @Path("agregarCliente")
     @Produces(MediaType.APPLICATION_JSON)
-    public String buscarClientes() {
-//        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
-        return "";
+    public RespuestaClientesDTO agregarCliente(ClienteDTO cliente) {
+        GestorClientesBean gestor = new GestorClientesBean();
+        RespuestaClientesDTO respuesta = gestor.guardarCliente(cliente);
+        return respuesta;
     }
+    
+//    @POST
+//    @Path("modificarCliente")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String modificarCliente() {
+////        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
+//        return "";
+//    }
+    
+//    @POST
+//    @Path("buscarClientes")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String buscarClientes() {
+////        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
+//        return "";
+//    }
+    
+//    @POST
+//    @Path("buscarClientes")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String buscarCliente() {
+////        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
+//        return "";
+//    }
+    
+//    @POST
+//    @Path("buscarClientes")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public String eliminarCliente() {
+////        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
+//        return "";
+//    }
     /**
      * PUT method for updating or creating an instance of GestorClientesWS
      * @param content representation for the resource

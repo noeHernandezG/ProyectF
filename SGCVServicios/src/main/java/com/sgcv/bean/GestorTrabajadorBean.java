@@ -145,6 +145,8 @@ public class GestorTrabajadorBean {
             proceso.setResultado(false);
             proceso.setMensaje("Error al modificar usuario");
         }
+//        respuesta.setEmpleado(empleado);
+        respuesta.setProceso(proceso);
         return respuesta;
     }
     
