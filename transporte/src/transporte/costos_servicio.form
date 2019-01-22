@@ -47,17 +47,22 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel26" min="-2" pref="132" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="gasolinatx" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                      <Component id="rendimientotx" min="-2" pref="146" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel33" min="-2" pref="98" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="refaccionestx" min="-2" pref="157" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel26" min="-2" pref="132" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="gasolinatx" min="-2" pref="108" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <Component id="rendimientotx" min="-2" pref="146" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="kiloiniciotx" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
@@ -68,15 +73,15 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btn_inicio" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel36" min="-2" pref="237" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Component id="jLabel34" min="-2" pref="121" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel24" pref="116" max="32767" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="kiloiniciotx" min="-2" pref="132" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                      <Component id="jLabel25" pref="112" max="32767" attributes="0"/>
+                      <Component id="jLabel24" min="-2" pref="132" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel25" min="-2" pref="119" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="kilofinaltx" min="-2" pref="131" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
@@ -108,7 +113,7 @@
                                       <Component id="jLabel32" min="-2" pref="94" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="viaticostx" min="-2" pref="155" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel35" max="32767" attributes="0"/>
@@ -144,6 +149,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel34" min="-2" pref="25" max="-2" attributes="0"/>
                   <Component id="btn_inicio" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Component id="jLabel36" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -557,6 +563,20 @@
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="UTILIDAD NETA"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel36">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Arial" size="12" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="CALCULAR GASTO DE CADA SERVICIO"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder/>
