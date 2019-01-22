@@ -5,6 +5,16 @@
  */
 package transporte;
 
+import com.sgcv.bean.ClientesBean;
+import com.sgcv.bean.EmpleadosBean;
+import com.sgcv.dto.ClienteDTO;
+import com.sgcv.dto.DireccionDTO;
+import com.sgcv.dto.EstadosDTO;
+import com.sgcv.dto.MunicipiosDTO;
+import com.sgcv.dto.PersonaDTO;
+import com.sgcv.dto.RespuestaClientesDTO;
+import com.sgcv.dto.RespuestaEstadosDTO;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,10 +26,20 @@ public class clientes_modificar extends javax.swing.JFrame {
     /**
      * Creates new form clientes_nuevos1
      */
+    ClienteDTO cliente;
     public clientes_modificar() {
         initComponents();
     }
 
+    public clientes_modificar(ClienteDTO cliente) {
+        initComponents();
+        this.cliente = cliente;
+        llenarEstados();
+        buscarCliente();
+        
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +50,7 @@ public class clientes_modificar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
-        empresatx = new javax.swing.JTextField();
+        empresatxt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         tel1tx = new javax.swing.JTextField();
@@ -75,7 +95,7 @@ public class clientes_modificar extends javax.swing.JFrame {
         jLabel6.setText("NOMBRE EMPRESA:");
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        empresatx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        empresatxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("MODIFICAR CLIENTE");
@@ -205,6 +225,12 @@ public class clientes_modificar extends javax.swing.JFrame {
 
         cptx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        entidadtx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entidadtxActionPerformed(evt);
+            }
+        });
+
         jTextPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextPane1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jTextPane1.setText("CALLE JOSE MARIA VELASCO S/N, COL. SAN ANTONIO XAHUENTO, TULTEPEC, ESTADO DE MEXICO, C.P. 54960 CORREO: info@ocsalev.com TELEFONO: 01(55) 50867800");
@@ -237,7 +263,7 @@ public class clientes_modificar extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(empresatx, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(empresatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -311,7 +337,7 @@ public class clientes_modificar extends javax.swing.JFrame {
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(empresatx, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(empresatxt, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -373,7 +399,7 @@ public class clientes_modificar extends javax.swing.JFrame {
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
        
-        if(empresatx.getText().equals("")){
+        if(empresatxt.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el nombre de la empresa");
         }else if(nombretx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el nombre del cliente");
@@ -397,6 +423,41 @@ public class clientes_modificar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Ingrese la colonia");
         }else if(cptx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el codigo postal");
+        }else{
+            PersonaDTO persona = cliente.getPersona();
+            if(empresatxt.getText().equals("")){
+                persona.setNombre(nombretx.getText());
+                persona.setaMaterno(amtx.getText());
+                persona.setaPaterno(aptx.getText());
+                persona.setTipoPersona("FISICA");
+            }else{
+                persona.setNombre(empresatxt.getText());
+                persona.setTipoPersona("MORAL");
+            }
+            persona.setCorreo(correotx.getText());
+            persona.setTelefono1(tel1tx.getText());
+            persona.setTelefono2(tel2tx.getText());
+            persona.setRfc(rfctx.getText());
+//              
+            DireccionDTO direccion = cliente.getDireccion();
+            direccion.setCalle(calletx.getText());
+            direccion.setColonia(coloniatx.getText());
+            direccion.setCp(cptx.getText());
+            direccion.setEntidadFederativa(entidadtx.getSelectedItem().toString());
+            direccion.setMunicipio(municipiotx.getSelectedItem().toString());
+            direccion.setNumero(numerotx.getText());
+
+            ClienteDTO clienteDto = new ClienteDTO();
+            cliente.setDireccion(direccion);
+            cliente.setPersona(persona);
+            ClientesBean gestor = new ClientesBean();
+            RespuestaClientesDTO respuesta=gestor.modificarCliente(cliente);
+            JOptionPane.showMessageDialog(this, respuesta.getProceso().getMensaje());
+            if(respuesta.getProceso().isResultado()){
+                clientes_principal cli_pri=new clientes_principal();
+                cli_pri.setVisible(true);
+                this.setVisible(false);
+            }
         }
     }//GEN-LAST:event_btn_guardarActionPerformed
 
@@ -416,6 +477,52 @@ public class clientes_modificar extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    private void entidadtxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entidadtxActionPerformed
+        // TODO add your handling code here:
+        llenarMunicipios();
+    }//GEN-LAST:event_entidadtxActionPerformed
+
+    public void buscarCliente(){
+        ClientesBean bean = new ClientesBean();
+        System.out.println("Id cliente"+this.cliente.getIdCliente());
+        RespuestaClientesDTO cliente = bean.buscarCliente(this.cliente);
+        ClienteDTO clienteDto=cliente.getClientes().get(0);
+        this.cliente=clienteDto;
+        empresatxt.setText(clienteDto.getPersona().getNombre());
+        nombretx.setText(clienteDto.getPersona().getNombre());
+        aptx.setText(clienteDto.getPersona().getaPaterno());
+        amtx.setText(clienteDto.getPersona().getaMaterno());
+        rfctx.setText(clienteDto.getPersona().getRfc());
+        correotx.setText(clienteDto.getPersona().getCorreo());
+        tel1tx.setText(clienteDto.getPersona().getTelefono1());
+        tel2tx.setText(clienteDto.getPersona().getTelefono2());
+        calletx.setText(clienteDto.getDireccion().getCalle());
+        numerotx.setText(clienteDto.getDireccion().getNumero());
+        coloniatx.setText(clienteDto.getDireccion().getColonia());
+        municipiotx.setSelectedItem(clienteDto.getDireccion().getMunicipio());
+        entidadtx.setSelectedItem(clienteDto.getDireccion().getEntidadFederativa());
+        cptx.setText(clienteDto.getDireccion().getCp());
+    }
+    
+    public void llenarEstados(){
+       EmpleadosBean empleados= new EmpleadosBean();
+       RespuestaEstadosDTO estados=empleados.getEstados();
+       for(EstadosDTO estado: estados.getEstados()){
+           entidadtx.addItem(estado.getEstado());
+       }
+   }
+   
+   public void llenarMunicipios(){
+       EmpleadosBean empleados= new EmpleadosBean();
+       EstadosDTO estadosDTO= new EstadosDTO();
+       estadosDTO.setEstado(entidadtx.getSelectedItem().toString());
+       RespuestaEstadosDTO estados=empleados.getMunicipios(estadosDTO);
+        Collections.sort(estados.getEstados().get(0).getMunicipios());
+//         Collections.sort(list);
+       for(MunicipiosDTO municipioDTO: estados.getEstados().get(0).getMunicipios()){
+           municipiotx.addItem(municipioDTO.getMunicipio());
+       }
+   }
     /**
      * @param args the command line arguments
      */
@@ -465,7 +572,7 @@ public class clientes_modificar extends javax.swing.JFrame {
     private javax.swing.JTextField coloniatx;
     private javax.swing.JTextField correotx;
     private javax.swing.JTextField cptx;
-    private javax.swing.JTextField empresatx;
+    private javax.swing.JTextField empresatxt;
     private javax.swing.JComboBox<String> entidadtx;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

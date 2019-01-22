@@ -26,6 +26,7 @@ public class ClientesBean {
     String urlGuarda="http://192.168.56.1:7001/SGCVServicios/resources/gestorClientesWS/agregarCliente";
     String urlBusca="http://192.168.56.1:7001/SGCVServicios/resources/gestorClientesWS/buscarClientes";
     String urlBuscaCliente="http://192.168.56.1:7001/SGCVServicios/resources/gestorClientesWS/buscarCliente";
+    String urlModifica="http://192.168.56.1:7001/SGCVServicios/resources/gestorClientesWS/modificarCliente";
     String metodo="POST";
     
     public RespuestaClientesDTO guardarCliente(ClienteDTO clienteDTO){
@@ -63,8 +64,16 @@ public class ClientesBean {
         return clientes;
     }
     
-    public RespuestaClientesDTO modificarCliente(ClienteDTO cliente){
-        return new RespuestaClientesDTO();
+    public RespuestaClientesDTO modificarCliente(ClienteDTO clienteDTO){
+        Gson gson=new Gson();
+        ClienteREST cliente=new ClienteREST();
+        String request=gson.toJson(clienteDTO);
+        System.out.println(""+request);
+        String response=cliente.getResponseDTO(urlModifica, metodo, request);
+        RespuestaClientesDTO clientes=gson.fromJson(response, RespuestaClientesDTO.class);
+//        System.out.println(respuesta);
+//        RespuestaEstadosDTO estados = gson.fromJson(respuesta, RespuestaEstadosDTO.class);
+        return clientes;
     }
     
     public RespuestaClientesDTO eliminarCliente(ClienteDTO cliente){

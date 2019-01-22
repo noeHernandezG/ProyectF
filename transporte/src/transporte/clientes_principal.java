@@ -216,9 +216,18 @@ public class clientes_principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificarActionPerformed
-         clientes_modificar cli_mod=new clientes_modificar();
-        cli_mod.setVisible(true);
-        this.setVisible(false);
+        int row = tablaClientes.getSelectedRow();
+        System.out.println(row);
+        if(row >= 0){
+            System.out.println(tablaClientes.getValueAt(row, 2));
+            
+            ClienteDTO cliente= new ClienteDTO();
+            cliente.setIdCliente(Integer.parseInt(tablaClientes.getValueAt(row, 2).toString()));
+            clientes_modificar cli_mod=new clientes_modificar(cliente);
+            cli_mod.setVisible(true);
+            this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_btn_modificarActionPerformed
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed

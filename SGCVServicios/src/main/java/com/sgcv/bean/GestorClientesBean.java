@@ -190,8 +190,53 @@ public class GestorClientesBean {
         return respuesta;
     }
     
-    public RespuestaClientesDTO modificarCliente(ClienteDTO cliente){
-        return new RespuestaClientesDTO();
+    public RespuestaClientesDTO modificarCliente(ClienteDTO clienteDTO){
+        RespuestaClientesDTO respuesta= new RespuestaClientesDTO();
+        List<ClienteDTO> clientes= new ArrayList();
+        ProcesoDTO proceso= new ProcesoDTO();
+        try{
+            Cliente cliente = new Cliente();
+            
+            Direccion direccion = new Direccion();
+            direccion.setCalle(clienteDTO.getDireccion().getCalle());
+            direccion.setColonia(clienteDTO.getDireccion().getColonia());
+            direccion.setCp(clienteDTO.getDireccion().getCp());
+            direccion.setEntidadFederativa(clienteDTO.getDireccion().getEntidadFederativa());
+            direccion.setMunicipio(clienteDTO.getDireccion().getMunicipio());
+            direccion.setNumero(clienteDTO.getDireccion().getNumero());
+            direccion.setIdDireccion(clienteDTO.getDireccion().getIdDireccion());
+            
+            Persona persona = new Persona();
+            persona.setNombre(clienteDTO.getPersona().getNombre());
+            persona.setAMaterno(clienteDTO.getPersona().getaMaterno());
+            persona.setAPaterno(clienteDTO.getPersona().getaPaterno());
+            persona.setTipoPersona(clienteDTO.getPersona().getTipoPersona());
+            persona.setCorreo(clienteDTO.getPersona().getCorreo());
+            persona.setTelefono1(clienteDTO.getPersona().getTelefono1());
+            persona.setTelefono2(clienteDTO.getPersona().getTelefono2());
+            persona.setRfc(clienteDTO.getPersona().getRfc());
+            persona.setIdPersona(clienteDTO.getPersona().getIdPersona());
+            
+            cliente.setIdDireccion(direccion);
+            cliente.setIdPersona(persona);
+            cliente.setIdCliente(clienteDTO.getIdCliente());
+            Dao<Cliente> dao= new Dao<Cliente>(Cliente.class);
+            proceso.setResultado(dao.actualiza(cliente));
+//            System.out.println("Total "+result);
+            if(proceso.isResultado()){
+                proceso.setMensaje("El cliente se modifico con exito");
+            }else{
+                proceso.setMensaje("No se pudo modificar al clienete");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            proceso.setResultado(false);
+            proceso.setMensaje("Error al modificar cliente");
+        }
+        
+        respuesta.setProceso(proceso);
+        respuesta.setClientes(clientes);
+        return respuesta;
     }
     
     public RespuestaClientesDTO eliminarCliente(ClienteDTO cliente){
