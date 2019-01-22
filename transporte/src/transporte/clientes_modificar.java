@@ -96,6 +96,11 @@ public class clientes_modificar extends javax.swing.JFrame {
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         empresatxt.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        empresatxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                empresatxtKeyReleased(evt);
+            }
+        });
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("MODIFICAR CLIENTE");
@@ -183,6 +188,11 @@ public class clientes_modificar extends javax.swing.JFrame {
         jLabel27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         nombretx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        nombretx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nombretxKeyReleased(evt);
+            }
+        });
 
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel28.setText("APELLIDO P:");
@@ -399,13 +409,13 @@ public class clientes_modificar extends javax.swing.JFrame {
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
        
-        if(empresatxt.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Ingrese el nombre de la empresa");
-        }else if(nombretx.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Ingrese el nombre del cliente");
-        }else if(aptx.getText().equals("")){
+        if(empresatxt.getText().equals("") && empresatxt.isEnabled()){
+            JOptionPane.showMessageDialog(this,"Ingrese el nombre de la empresa o cliente");
+        }else if(nombretx.getText().equals("") && nombretx.isEnabled()){
+            JOptionPane.showMessageDialog(this,"Ingrese el nombre de la empresa o cliente");
+        }else if(aptx.getText().equals("") && aptx.isEnabled()){
             JOptionPane.showMessageDialog(this,"Ingrese el apellido paterno del cliente");
-        }else if(amtx.getText().equals("")){
+        }else if(amtx.getText().equals("") && amtx.isEnabled()){
             JOptionPane.showMessageDialog(this,"Ingrese el apellido materno del cliente");
         }else if(rfctx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el RFC del cliente");        
@@ -482,16 +492,46 @@ public class clientes_modificar extends javax.swing.JFrame {
         llenarMunicipios();
     }//GEN-LAST:event_entidadtxActionPerformed
 
+    private void empresatxtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_empresatxtKeyReleased
+        // TODO add your handling code here:
+        if(empresatxt.getText().equals("")){
+            nombretx.setEnabled(true);
+            aptx.setEnabled(true);
+            amtx.setEnabled(true);
+        }else{
+            nombretx.setEnabled(false);
+            aptx.setEnabled(false);
+            amtx.setEnabled(false);
+        }
+    }//GEN-LAST:event_empresatxtKeyReleased
+
+    private void nombretxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombretxKeyReleased
+        // TODO add your handling code here:
+        if(nombretx.getText().equals("")){
+            empresatxt.setEnabled(true);
+        }else{
+            empresatxt.setEnabled(false);
+        }
+    }//GEN-LAST:event_nombretxKeyReleased
+
     public void buscarCliente(){
         ClientesBean bean = new ClientesBean();
         System.out.println("Id cliente"+this.cliente.getIdCliente());
         RespuestaClientesDTO cliente = bean.buscarCliente(this.cliente);
         ClienteDTO clienteDto=cliente.getClientes().get(0);
         this.cliente=clienteDto;
-        empresatxt.setText(clienteDto.getPersona().getNombre());
-        nombretx.setText(clienteDto.getPersona().getNombre());
-        aptx.setText(clienteDto.getPersona().getaPaterno());
-        amtx.setText(clienteDto.getPersona().getaMaterno());
+        if(clienteDto.getPersona().getTipoPersona().equals("MORAL")){
+            empresatxt.setText(clienteDto.getPersona().getNombre());
+            nombretx.setEnabled(false);
+            aptx.setEnabled(false);
+            amtx.setEnabled(false);
+        }else{
+            nombretx.setText(clienteDto.getPersona().getNombre());
+            aptx.setText(clienteDto.getPersona().getaPaterno());
+            amtx.setText(clienteDto.getPersona().getaMaterno());
+            empresatxt.setEnabled(false);
+        }
+        
         rfctx.setText(clienteDto.getPersona().getRfc());
         correotx.setText(clienteDto.getPersona().getCorreo());
         tel1tx.setText(clienteDto.getPersona().getTelefono1());
