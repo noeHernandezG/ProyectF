@@ -5,6 +5,11 @@
  */
 package transporte;
 
+import com.sgcv.bean.ClientesBean;
+import com.sgcv.dto.ClienteDTO;
+import com.sgcv.dto.RespuestaClientesDTO;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author FERRUZ
@@ -16,6 +21,7 @@ public class clientes_principal extends javax.swing.JFrame {
      */
     public clientes_principal() {
         initComponents();
+        llenarClientes();
     }
 
     /**
@@ -28,8 +34,6 @@ public class clientes_principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton6 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         btn_modificar = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
         btn_NC = new javax.swing.JButton();
@@ -41,6 +45,8 @@ public class clientes_principal extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         btn_inicio = new javax.swing.JButton();
         btn_regresar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaClientes = new javax.swing.JTable();
 
         jButton6.setText("SALIR");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -51,13 +57,6 @@ public class clientes_principal extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "LISTA CLIENTES", "Cliente 1", "Cliente 2", "Cliente 3", "Cliente 4", "Cliente 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
 
         btn_modificar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_modificar.setText("MODIFICAR");
@@ -135,6 +134,19 @@ public class clientes_principal extends javax.swing.JFrame {
             }
         });
 
+        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaClientes);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -164,11 +176,13 @@ public class clientes_principal extends javax.swing.JFrame {
                         .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(160, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(56, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(56, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,9 +194,7 @@ public class clientes_principal extends javax.swing.JFrame {
                 .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(btn_NC, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,6 +205,11 @@ public class clientes_principal extends javax.swing.JFrame {
                     .addComponent(btn_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(140, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(186, Short.MAX_VALUE)))
         );
 
         pack();
@@ -215,9 +232,18 @@ public class clientes_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_NCActionPerformed
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed
-        clientes_vista cli_vi=new clientes_vista();
-        cli_vi.setVisible(true);
-        this.setVisible(false);
+        int row = tablaClientes.getSelectedRow();
+        System.out.println(row);
+        if(row >= 0){
+            System.out.println(tablaClientes.getValueAt(row, 2));
+            
+            ClienteDTO cliente= new ClienteDTO();
+            cliente.setIdCliente(Integer.parseInt(tablaClientes.getValueAt(row, 2).toString()));
+            clientes_vista cli_vi=new clientes_vista(cliente);
+            cli_vi.setVisible(true);
+            this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_btn_verActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -240,6 +266,22 @@ public class clientes_principal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_regresarActionPerformed
 
+    public void llenarClientes(){
+       ClientesBean bean = new ClientesBean();
+       RespuestaClientesDTO respuesta= bean.buscarClientes();
+       DefaultTableModel model= new DefaultTableModel();
+        model.addColumn("RFC");
+        model.addColumn("Nombre");
+        model.addColumn("");
+        tablaClientes.setModel(model);
+        tablaClientes.getColumnModel().getColumn(2).setMinWidth(0);
+        tablaClientes.getTableHeader().getColumnModel().getColumn(2).setMaxWidth(0);
+       for(ClienteDTO cliente:respuesta.getClientes()){
+           model.addRow(new Object[]{cliente.getPersona().getRfc(),
+                cliente.getPersona().getNombre(),
+                cliente.getIdCliente()});
+       }
+   }
     /**
      * @param args the command line arguments
      */
@@ -287,9 +329,9 @@ public class clientes_principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTable tablaClientes;
     // End of variables declaration//GEN-END:variables
 }

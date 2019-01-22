@@ -5,6 +5,10 @@
  */
 package transporte;
 
+import com.sgcv.bean.ClientesBean;
+import com.sgcv.dto.ClienteDTO;
+import com.sgcv.dto.RespuestaClientesDTO;
+
 /**
  *
  * @author FERRUZ
@@ -14,8 +18,15 @@ public class clientes_vista extends javax.swing.JFrame {
     /**
      * Creates new form clientes_nuevos1
      */
+    ClienteDTO cliente;
     public clientes_vista() {
         initComponents();
+    }
+
+    public clientes_vista(ClienteDTO cliente) {
+        initComponents();
+        this.cliente = cliente;
+        buscarCliente();
     }
 
     /**
@@ -277,6 +288,26 @@ public class clientes_vista extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_regresarActionPerformed
 
+    public void buscarCliente(){
+        ClientesBean bean = new ClientesBean();
+        System.out.println("Id cliente"+this.cliente.getIdCliente());
+        RespuestaClientesDTO cliente = bean.buscarCliente(this.cliente);
+        ClienteDTO clienteDto=cliente.getClientes().get(0);
+        empresatx.setText(clienteDto.getPersona().getNombre());
+        nombretx.setText(clienteDto.getPersona().getNombre());
+        aptx.setText(clienteDto.getPersona().getaPaterno());
+        amtx.setText(clienteDto.getPersona().getaMaterno());
+        rfctx.setText(clienteDto.getPersona().getRfc());
+        correotx.setText(clienteDto.getPersona().getCorreo());
+        tel1tx.setText(clienteDto.getPersona().getTelefono1());
+        tel2tx.setText(clienteDto.getPersona().getTelefono2());
+        calletx.setText(clienteDto.getDireccion().getCalle());
+        numerotx.setText(clienteDto.getDireccion().getNumero());
+        coloniatx.setText(clienteDto.getDireccion().getColonia());
+        municipiotx.setText(clienteDto.getDireccion().getMunicipio());
+        entidadtx.setText(clienteDto.getDireccion().getEntidadFederativa());
+        cptx.setText(clienteDto.getDireccion().getCp());
+    }
     /**
      * @param args the command line arguments
      */

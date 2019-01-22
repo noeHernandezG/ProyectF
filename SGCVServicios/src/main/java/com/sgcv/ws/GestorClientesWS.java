@@ -44,29 +44,32 @@ public class GestorClientesWS {
         return respuesta;
     }
     
-//    @POST
-//    @Path("modificarCliente")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public String modificarCliente() {
-////        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
-//        return "";
-//    }
+    @POST
+    @Path("modificarCliente")
+    @Produces(MediaType.APPLICATION_JSON)
+    public RespuestaClientesDTO modificarCliente(ClienteDTO cliente) {
+      GestorClientesBean gestor = new GestorClientesBean();
+        RespuestaClientesDTO respuesta = gestor.modificarCliente(cliente);
+        return respuesta;
+    }
     
-//    @POST
-//    @Path("buscarClientes")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public String buscarClientes() {
-////        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
-//        return "";
-//    }
+    @POST
+    @Path("buscarClientes")
+    @Produces(MediaType.APPLICATION_JSON)
+    public RespuestaClientesDTO buscarClientes() {
+        GestorClientesBean gestor = new GestorClientesBean();
+        RespuestaClientesDTO respuesta = gestor.buscarClientes();
+        return respuesta;
+    }
     
-//    @POST
-//    @Path("buscarClientes")
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public String buscarCliente() {
-////        GestorEstadosMunicipiosBean gestorEstados= new GestorEstadosMunicipiosBean();
-//        return "";
-//    }
+    @POST
+    @Path("buscarCliente")
+    @Produces(MediaType.APPLICATION_JSON)
+    public RespuestaClientesDTO buscarCliente(ClienteDTO cliente) {
+       GestorClientesBean gestor = new GestorClientesBean();
+        RespuestaClientesDTO respuesta = gestor.buscarCliente(cliente);
+        return respuesta;
+    }
     
 //    @POST
 //    @Path("buscarClientes")

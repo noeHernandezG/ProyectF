@@ -5,6 +5,16 @@
  */
 package transporte;
 
+import com.sgcv.dto.ClienteDTO;
+import com.sgcv.dto.DireccionDTO;
+import com.sgcv.dto.PersonaDTO;
+import com.sgcv.bean.ClientesBean;
+import com.sgcv.bean.EmpleadosBean;
+import com.sgcv.dto.EstadosDTO;
+import com.sgcv.dto.MunicipiosDTO;
+import com.sgcv.dto.RespuestaClientesDTO;
+import com.sgcv.dto.RespuestaEstadosDTO;
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +28,7 @@ public class clientes_nuevos extends javax.swing.JFrame {
      */
     public clientes_nuevos() {
         initComponents();
+        llenarEstados();
     }
 
     /**
@@ -76,6 +87,22 @@ public class clientes_nuevos extends javax.swing.JFrame {
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         empresa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        empresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                empresaActionPerformed(evt);
+            }
+        });
+        empresa.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                empresaKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                empresaKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                empresaKeyTyped(evt);
+            }
+        });
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("NUEVO CLIENTE");
@@ -163,6 +190,14 @@ public class clientes_nuevos extends javax.swing.JFrame {
         jLabel27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         nombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                nombreKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nombreKeyReleased(evt);
+            }
+        });
 
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel28.setText("APELLIDO P:");
@@ -204,6 +239,12 @@ public class clientes_nuevos extends javax.swing.JFrame {
         jLabel36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         cp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        entidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                entidadActionPerformed(evt);
+            }
+        });
 
         jTextPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTextPane1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -374,13 +415,11 @@ public class clientes_nuevos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
-        if(empresa.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Ingrese el nombre de la empresa");
-        }else if(nombre.getText().equals("")){
-            JOptionPane.showMessageDialog(this,"Ingrese el nombre del cliente");
-        }else if(ap.getText().equals("")){
+        if(empresa.getText().equals("") && nombre.getText().equals("")){
+            JOptionPane.showMessageDialog(this,"Ingrese el nombre de la empresa o cliente");
+        }else if(!nombre.getText().equals("") && ap.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el apellido paterno del cliente");
-        }else if(am.getText().equals("")){
+        }else if(!nombre.getText().equals("") && am.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el apellido materno del cliente");
         }else if(rfc.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el RFC del cliente");        
@@ -398,6 +437,42 @@ public class clientes_nuevos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Ingrese la colonia");
         }else if(cp.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese el codigo postal");
+        }else{
+            PersonaDTO persona = new PersonaDTO();
+            if(empresa.getText().equals("")){
+                persona.setNombre(nombre.getText());
+                persona.setaMaterno(am.getText());
+                persona.setaPaterno(ap.getText());
+                persona.setTipoPersona("FISICA");
+            }else{
+                persona.setNombre(empresa.getText());
+                persona.setTipoPersona("MORAL");
+            }
+            persona.setCorreo(correo.getText());
+            persona.setTelefono1(tel1.getText());
+            persona.setTelefono2(tel1.getText());
+            persona.setRfc(rfc.getText());
+//              
+            DireccionDTO direccion = new DireccionDTO();
+            direccion.setCalle(calle.getText());
+            direccion.setColonia(colonia.getText());
+            direccion.setCp(cp.getText());
+            direccion.setEntidadFederativa(entidad.getSelectedItem().toString());
+            direccion.setMunicipio(municipio.getSelectedItem().toString());
+            direccion.setNumero(numero.getText());
+
+            ClienteDTO clienteDto = new ClienteDTO();
+            clienteDto.setDireccion(direccion);
+            clienteDto.setPersona(persona);
+            ClientesBean gestor = new ClientesBean();
+            RespuestaClientesDTO respuesta=gestor.guardarCliente(clienteDto);
+            JOptionPane.showMessageDialog(this, respuesta.getProceso().getMensaje());
+            if(respuesta.getProceso().isResultado()){
+                clientes_principal cli_pri=new clientes_principal();
+                cli_pri.setVisible(true);
+                this.setVisible(false);
+            }
+//                clienteDTO.add(clienteDto);
         }
         
     }//GEN-LAST:event_btn_guardarActionPerformed
@@ -418,6 +493,72 @@ public class clientes_nuevos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    private void empresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empresaActionPerformed
+        // TODO add your handling code here:
+//        if
+    }//GEN-LAST:event_empresaActionPerformed
+
+    private void empresaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_empresaKeyPressed
+        
+    }//GEN-LAST:event_empresaKeyPressed
+
+    private void nombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyPressed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_nombreKeyPressed
+
+    private void empresaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_empresaKeyTyped
+        
+    }//GEN-LAST:event_empresaKeyTyped
+
+    private void empresaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_empresaKeyReleased
+        // TODO add your handling code here:
+        if(empresa.getText().equals("")){
+            nombre.setEnabled(true);
+            ap.setEnabled(true);
+            am.setEnabled(true);
+        }else{
+            nombre.setEnabled(false);
+            ap.setEnabled(false);
+            am.setEnabled(false);
+        }
+    }//GEN-LAST:event_empresaKeyReleased
+
+    private void nombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nombreKeyReleased
+        // TODO add your handling code here:
+        if(nombre.getText().equals("")){
+            empresa.setEnabled(true);
+        }else{
+            empresa.setEnabled(false);
+        }
+    }//GEN-LAST:event_nombreKeyReleased
+
+    private void entidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entidadActionPerformed
+        // TODO add your handling code here:
+        llenarMunicipios();
+    }//GEN-LAST:event_entidadActionPerformed
+
+    public void llenarEstados(){
+       EmpleadosBean empleados= new EmpleadosBean();
+       RespuestaEstadosDTO estados=empleados.getEstados();
+       for(EstadosDTO estado: estados.getEstados()){
+           entidad.addItem(estado.getEstado());
+       }
+   }
+   
+   public void llenarMunicipios(){
+       EmpleadosBean empleados= new EmpleadosBean();
+       EstadosDTO estadosDTO= new EstadosDTO();
+       estadosDTO.setEstado(entidad.getSelectedItem().toString());
+       RespuestaEstadosDTO estados=empleados.getMunicipios(estadosDTO);
+        Collections.sort(estados.getEstados().get(0).getMunicipios());
+//         Collections.sort(list);
+       for(MunicipiosDTO municipioDTO: estados.getEstados().get(0).getMunicipios()){
+           municipio.addItem(municipioDTO.getMunicipio());
+       }
+   }
+   
+   
     /**
      * @param args the command line arguments
      */
