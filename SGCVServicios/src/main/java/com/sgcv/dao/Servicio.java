@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -53,6 +54,13 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Servicio.findByUtilidadNeta", query = "SELECT s FROM Servicio s WHERE s.utilidadNeta = :utilidadNeta")})
 public class Servicio implements Serializable {
 
+    @Size(max = 100)
+    @Column(name = "fecha_solicitud")
+    private String fechaSolicitud;
+    @Size(max = 100)
+    @Column(name = "fecha_realizacion")
+    private String fechaRealizacion;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -61,12 +69,6 @@ public class Servicio implements Serializable {
     @Size(max = 1)
     @Column(name = "folio")
     private String folio;
-    @Column(name = "fecha_solicitud")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaSolicitud;
-    @Column(name = "fecha_realizacion")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaRealizacion;
     @Size(max = 1)
     @Column(name = "tipo_camion")
     private String tipoCamion;
@@ -93,7 +95,7 @@ public class Servicio implements Serializable {
     @Column(name = "utilidad_neta")
     private Integer utilidadNeta;
     @JoinColumn(name = "id_cliente", referencedColumnName = "id_cliente")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Cliente idCliente;
     @JoinColumn(name = "id_trabajador", referencedColumnName = "id_trabajador")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -122,22 +124,6 @@ public class Servicio implements Serializable {
 
     public void setFolio(String folio) {
         this.folio = folio;
-    }
-
-    public Date getFechaSolicitud() {
-        return fechaSolicitud;
-    }
-
-    public void setFechaSolicitud(Date fechaSolicitud) {
-        this.fechaSolicitud = fechaSolicitud;
-    }
-
-    public Date getFechaRealizacion() {
-        return fechaRealizacion;
-    }
-
-    public void setFechaRealizacion(Date fechaRealizacion) {
-        this.fechaRealizacion = fechaRealizacion;
     }
 
     public String getTipoCamion() {
@@ -268,6 +254,22 @@ public class Servicio implements Serializable {
     @Override
     public String toString() {
         return "com.sgcv.dao.Servicio[ idServicio=" + idServicio + " ]";
+    }
+
+    public String getFechaSolicitud() {
+        return fechaSolicitud;
+    }
+
+    public void setFechaSolicitud(String fechaSolicitud) {
+        this.fechaSolicitud = fechaSolicitud;
+    }
+
+    public String getFechaRealizacion() {
+        return fechaRealizacion;
+    }
+
+    public void setFechaRealizacion(String fechaRealizacion) {
+        this.fechaRealizacion = fechaRealizacion;
     }
     
 }

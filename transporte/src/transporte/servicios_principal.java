@@ -7,6 +7,8 @@ package transporte;
 
 import com.sgcv.bean.ServiciosBean;
 import com.sgcv.dto.RespuestaServiciosDTO;
+import com.sgcv.dto.ServiciosDTO;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -43,7 +45,7 @@ public class servicios_principal extends javax.swing.JFrame {
         btn_inicio = new javax.swing.JButton();
         btn_regresar = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaServicios = new javax.swing.JTable();
 
         jButton7.setText("SALIR");
         jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -117,7 +119,7 @@ public class servicios_principal extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaServicios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -128,7 +130,7 @@ public class servicios_principal extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(tablaServicios);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,9 +208,19 @@ public class servicios_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_NSActionPerformed
 
     private void btn_verActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_verActionPerformed
-        servicios_realizados ser_real=new servicios_realizados();
-        ser_real.setVisible(true);
-        this.setVisible(false);
+        int row= tablaServicios.getSelectedRow();
+        System.out.println(""+row);
+        if(row >= 0){
+//            tablaEmpleados.getValueAt(row, 2);
+            System.out.println(""+tablaServicios.getValueAt(row, 3));
+            ServiciosDTO servicio = new ServiciosDTO();
+            servicio.setIdServicio(Integer.parseInt(tablaServicios.getValueAt(row, 3).toString()));
+            servicios_realizados ser_real=new servicios_realizados(servicio);
+            ser_real.setVisible(true);
+            this.setVisible(false);
+        }
+        
+        
     }//GEN-LAST:event_btn_verActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -231,16 +243,18 @@ public class servicios_principal extends javax.swing.JFrame {
         ServiciosBean bean = new ServiciosBean();
        RespuestaServiciosDTO respuesta= bean.buscarServicios();
        DefaultTableModel model= new DefaultTableModel();
+        model.addColumn("Folio");
         model.addColumn("RFC");
         model.addColumn("Nombre");
         model.addColumn("");
-        tablaClientes.setModel(model);
-        tablaClientes.getColumnModel().getColumn(2).setMinWidth(0);
-        tablaClientes.getTableHeader().getColumnModel().getColumn(2).setMaxWidth(0);
-       for(ClienteDTO cliente:respuesta.getClientes()){
-           model.addRow(new Object[]{cliente.getPersona().getRfc(),
-                cliente.getPersona().getNombre(),
-                cliente.getIdCliente()});
+        tablaServicios.setModel(model);
+        tablaServicios.getColumnModel().getColumn(3).setMinWidth(0);
+        tablaServicios.getTableHeader().getColumnModel().getColumn(3).setMaxWidth(0);
+       for(ServiciosDTO servicio:respuesta.getServicios()){
+           model.addRow(new Object[]{servicio.getFolio(),
+                servicio.getIdCliente().getPersona().getRfc(),
+                servicio.getIdCliente().getPersona().getNombre(),
+                servicio.getIdServicio()});
        }
     }
     /**
@@ -293,7 +307,7 @@ public class servicios_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTable tablaServicios;
     // End of variables declaration//GEN-END:variables
 }

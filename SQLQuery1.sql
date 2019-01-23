@@ -62,12 +62,13 @@ create table cliente(
 	foreign key(id_persona) references persona(id_persona),
 	foreign key(id_direccion) references direccion(id_direccion) 
 );
+
 create table servicio(
 	id_servicio int IDENTITY(1,1) primary key,
-	folio varchar,
+	folio varchar(100),
 	id_cliente int,
-	fecha_solicitud datetime,
-	fecha_realizacion datetime,
+	fecha_solicitud varchar(100),
+	fecha_realizacion varchar(100),
 	tipo_camion varchar(100),
 	placas_camion varchar(100),
 	id_trabajador int,

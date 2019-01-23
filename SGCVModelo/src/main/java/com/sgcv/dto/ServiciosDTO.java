@@ -16,8 +16,8 @@ public class ServiciosDTO {
     
     private Integer idServicio;
     private String folio;
-    private Date fechaSolicitud;
-    private Date fechaRealizacion;
+    private String fechaSolicitud;
+    private String fechaRealizacion;
     private String tipoCamion;
     private String placasCamion;
     private String tipoCarga;
@@ -48,19 +48,19 @@ public class ServiciosDTO {
         this.folio = folio;
     }
 
-    public Date getFechaSolicitud() {
+    public String getFechaSolicitud() {
         return fechaSolicitud;
     }
 
-    public void setFechaSolicitud(Date fechaSolicitud) {
+    public void setFechaSolicitud(String fechaSolicitud) {
         this.fechaSolicitud = fechaSolicitud;
     }
 
-    public Date getFechaRealizacion() {
+    public String getFechaRealizacion() {
         return fechaRealizacion;
     }
 
-    public void setFechaRealizacion(Date fechaRealizacion) {
+    public void setFechaRealizacion(String fechaRealizacion) {
         this.fechaRealizacion = fechaRealizacion;
     }
 

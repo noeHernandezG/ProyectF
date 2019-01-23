@@ -12,6 +12,7 @@ import com.sgcv.dto.EstadosDTO;
 import com.sgcv.dto.MunicipiosDTO;
 import com.sgcv.dto.PersonaDTO;
 import com.sgcv.dto.RespuestaEstadosDTO;
+import com.sgcv.dto.RespuestaServiciosDTO;
 import com.sgcv.dto.ServiciosDTO;
 import java.math.BigInteger;
 import java.util.Collections;
@@ -489,8 +490,8 @@ public class servicios_nuevos extends javax.swing.JFrame {
             ServiciosDTO servicio= new ServiciosDTO();
             servicio.setCiudadDestino(destino.getSelectedItem().toString());
             servicio.setCiudadOrigen(origen.getSelectedItem().toString());
-            servicio.setFechaRealizacion(new Date());
-            servicio.setFechaSolicitud(new Date());
+            servicio.setFechaRealizacion(new Date().toString());
+            servicio.setFechaSolicitud(new Date().toString());
 //            servicio.setFolio(folio);
 //            servicio.setIdCliente(idCliente);
 //            servicio.setIdServicio();
@@ -502,8 +503,15 @@ public class servicios_nuevos extends javax.swing.JFrame {
             servicio.setTipoCamion(camion.getSelectedItem().toString());
             servicio.setTipoCarga(carga.getSelectedItem().toString());
             servicio.setTotalCobrado(Integer.parseInt(this.servicio.getText()));
+            servicio.setFolio(foliotx.getText());
             ServiciosBean gestor = new ServiciosBean();
-            gestor.guardarServicio(servicio);
+            RespuestaServiciosDTO respuesta= gestor.guardarServicio(servicio);
+            JOptionPane.showMessageDialog(this,respuesta.getProceso().getMensaje());
+            if(respuesta.getProceso().isResultado()){
+                servicios_principal serv=new servicios_principal();
+                serv.setVisible(true);
+                this.setVisible(false);
+            }
 //            servicio.setUtilidadNeta();
                     
         }
