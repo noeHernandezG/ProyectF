@@ -5,6 +5,7 @@
  */
 package transporte;
 
+import com.sgcv.dto.ServiciosDTO;
 import javax.swing.JOptionPane;
 
 /**
@@ -16,10 +17,18 @@ public class costos_servicio extends javax.swing.JFrame {
     /**
      * Creates new form clientes_nuevos1
      */
+    ServiciosDTO servicio;
     public costos_servicio() {
         initComponents();
     }
 
+    public costos_servicio(ServiciosDTO servicio) {
+        this.servicio = servicio;
+        initComponents();
+        llenardatos();
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,7 +39,7 @@ public class costos_servicio extends javax.swing.JFrame {
     private void initComponents() {
 
         btn_guardar = new javax.swing.JButton();
-        jLabel34 = new javax.swing.JLabel();
+        foliotx = new javax.swing.JLabel();
         btn_salir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -74,9 +83,9 @@ public class costos_servicio extends javax.swing.JFrame {
             }
         });
 
-        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("FOLIO");
-        jLabel34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        foliotx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        foliotx.setText("FOLIO");
+        foliotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btn_salir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_salir.setText("SALIR");
@@ -129,13 +138,22 @@ public class costos_servicio extends javax.swing.JFrame {
         kiloiniciotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         kilofinaltx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        kilofinaltx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kilofinaltxActionPerformed(evt);
+            }
+        });
+        kilofinaltx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                kilofinaltxKeyReleased(evt);
+            }
+        });
 
         jLabel25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel25.setText("KILOMETRAJE FINAL:");
         jLabel25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         kilorecotx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        kilorecotx.setText("KILOMETROS RECORRIDOS");
         kilorecotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -143,9 +161,13 @@ public class costos_servicio extends javax.swing.JFrame {
         jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         gasolinatx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        gasolinatx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                gasolinatxKeyReleased(evt);
+            }
+        });
 
         rendimientotx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        rendimientotx.setText("RENDIMIENTO");
         rendimientotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -243,7 +265,7 @@ public class costos_servicio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(70, 70, 70)
-                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(foliotx, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -298,7 +320,7 @@ public class costos_servicio extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(foliotx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -392,6 +414,31 @@ public class costos_servicio extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    private void kilofinaltxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kilofinaltxActionPerformed
+        // TODO add your handling code here:
+        int in=Integer.parseInt(kiloiniciotx.getText());
+        int fin=Integer.parseInt(kilofinaltx.getText());
+        kilorecotx.setText(""+(in+fin));
+    }//GEN-LAST:event_kilofinaltxActionPerformed
+
+    private void kilofinaltxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kilofinaltxKeyReleased
+        // TODO add your handling code here:
+        int in=Integer.parseInt(kiloiniciotx.getText());
+        int fin=Integer.parseInt(kilofinaltx.getText());
+        kilorecotx.setText(""+(in+fin));
+    }//GEN-LAST:event_kilofinaltxKeyReleased
+
+    private void gasolinatxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gasolinatxKeyReleased
+        // TODO add your handling code here:
+        int kr=Integer.parseInt(kilorecotx.getText());
+        int gg=Integer.parseInt(gasolinatx.getText());
+        rendimientotx.setText(""+(kr/gg));
+    }//GEN-LAST:event_gasolinatxKeyReleased
+
+    public void llenardatos(){
+        foliotx.setText(servicio.getFolio());
+        cobradotx.setText(servicio.getFolio());
+    }
     /**
      * @param args the command line arguments
      */
@@ -413,6 +460,7 @@ public class costos_servicio extends javax.swing.JFrame {
     private javax.swing.JLabel cobradotx;
     private javax.swing.JTextField comisiontx;
     private javax.swing.JTextField diseltx;
+    private javax.swing.JLabel foliotx;
     private javax.swing.JTextField gasolinatx;
     private javax.swing.JLabel gastostx;
     private javax.swing.JLabel jLabel1;
@@ -425,7 +473,6 @@ public class costos_servicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JScrollPane jScrollPane2;

@@ -7,6 +7,7 @@ package com.sgcv.dao;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -71,7 +72,7 @@ public class CostoServicio implements Serializable {
     @Column(name = "otros")
     private Integer otros;
     @JoinColumn(name = "id_servicio", referencedColumnName = "id_servicio")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Servicio idServicio;
 
     public CostoServicio() {

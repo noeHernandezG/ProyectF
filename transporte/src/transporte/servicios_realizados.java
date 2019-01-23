@@ -361,7 +361,7 @@ public class servicios_realizados extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_calcularActionPerformed
-        costos_servicio costo=new costos_servicio();
+        costos_servicio costo=new costos_servicio(servicio);
         costo.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btn_calcularActionPerformed

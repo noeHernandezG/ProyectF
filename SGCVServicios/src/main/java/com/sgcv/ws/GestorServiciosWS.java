@@ -6,6 +6,8 @@
 package com.sgcv.ws;
 
 import com.sgcv.bean.GestorServiciosBean;
+import com.sgcv.dto.CostoDTO;
+import com.sgcv.dto.RespuestaCostoDTO;
 import com.sgcv.dto.RespuestaServiciosDTO;
 import com.sgcv.dto.ServiciosDTO;
 import javax.ws.rs.core.Context;
@@ -79,4 +81,22 @@ public class GestorServiciosWS {
         RespuestaServiciosDTO respuesta = gestor.eliminarServicio(servicio);
         return respuesta;
     }
+    
+    @POST
+    @Path("guardarCosto")
+    @Produces(MediaType.APPLICATION_JSON)
+    public RespuestaCostoDTO guardarCosto(CostoDTO costo) {
+        GestorServiciosBean gestor = new GestorServiciosBean();
+        RespuestaCostoDTO respuesta = gestor.guardaCosto(costo);
+        return respuesta;
+    }
+    
+//    @POST
+//    @Path("buscarCosto")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public RespuestaCostoDTO buscarCosto(CostoDTO costo) {
+//        GestorServiciosBean gestor = new GestorServiciosBean();
+//        RespuestaCostoDTO respuesta = gestor.buscarCosto(costo);
+//        return respuesta;
+//    }
 }

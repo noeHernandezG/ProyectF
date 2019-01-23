@@ -6,13 +6,16 @@
 package com.sgcv.bean;
 
 import com.sgcv.dao.Cliente;
+import com.sgcv.dao.CostoServicio;
 import com.sgcv.dao.Dao;
 import com.sgcv.dao.Parametros;
 import com.sgcv.dao.Persona;
 import com.sgcv.dao.Servicio;
 import com.sgcv.dto.ClienteDTO;
+import com.sgcv.dto.CostoDTO;
 import com.sgcv.dto.PersonaDTO;
 import com.sgcv.dto.ProcesoDTO;
+import com.sgcv.dto.RespuestaCostoDTO;
 import com.sgcv.dto.RespuestaServiciosDTO;
 import com.sgcv.dto.ServiciosDTO;
 import com.sgcv.utils.CONSTANTE;
@@ -239,5 +242,67 @@ public class GestorServiciosBean {
         return new RespuestaServiciosDTO();
     }
     
+    public RespuestaCostoDTO guardaCosto(CostoDTO costoDTO){
+        RespuestaCostoDTO respuesta= new RespuestaCostoDTO();
+        ProcesoDTO proceso= new ProcesoDTO();
+        try{
+        CostoServicio costo= new CostoServicio();
+        Servicio servicio = new Servicio();
+        
+        servicio.setIdServicio(costoDTO.getIdServicio().getIdServicio());
+        costo.setIdServicio(servicio);
+        costo.setCalculoRendimiento(costoDTO.getCalculoRendimiento());
+        costo.setCasetas(costoDTO.getCasetas());
+        costo.setComision(costoDTO.getComision());
+        costo.setDieselCargado(costoDTO.getDieselCargado());
+//        costo.setIdServicio(costoDTO.getIdServicio());
+        costo.setKilometrajeFinal(costoDTO.getKilometrajeFinal());
+        costo.setKilometrajeInicial(costoDTO.getKilometrajeInicial());
+        costo.setLitrosGastados(costoDTO.getLitrosGastados());
+        costo.setOtros(costoDTO.getOtros());
+        costo.setRefacciones(costoDTO.getRefacciones());
+        costo.setViaticos(costoDTO.getViaticos());
+        
+        Dao<CostoServicio> daoT= new Dao<CostoServicio>(CostoServicio.class);
+        proceso.setResultado( daoT.inserta(costo));
+        if(proceso.isResultado()){
+            proceso.setMensaje("Exito al guardar costo");
+        }else{
+            proceso.setMensaje("Error al guardar costo");
+        }
+        }catch(Exception e){
+            e.printStackTrace();
+            proceso.setResultado(false);
+            proceso.setMensaje("Error al guaradar costos");
+        }
+        respuesta.setProceso(proceso);
+        return respuesta;
+    }
     
+//    public RespuestaCostoDTO buscarCosto(CostoDTO costo){
+////        RespuestaCostoDTO respuesta= new RespuestaCostoDTO();
+////        ProcesoDTO proceso= new ProcesoDTO();
+////        try{
+////        CostoServicio costo= new CostoServicio();
+////        Servicio servicio = new Servicio();
+////        
+////        servicio.setIdServicio(costoDTO.getIdServicio().getIdServicio());
+////        costo.setIdServicio(servicio);
+////        costo.setCalculoRendimiento(costoDTO.getCalculoRendimiento());
+////        costo.setCasetas(costoDTO.getCasetas());
+////        costo.setComision(costoDTO.getComision());
+////        costo.setDieselCargado(costoDTO.getDieselCargado());
+//////        costo.setIdServicio(costoDTO.getIdServicio());
+////        costo.setKilometrajeFinal(costoDTO.getKilometrajeFinal());
+////        costo.setKilometrajeInicial(costoDTO.getKilometrajeInicial());
+////        costo.setLitrosGastados(costoDTO.getLitrosGastados());
+////        costo.setOtros(costoDTO.getOtros());
+////        costo.setRefacciones(costoDTO.getRefacciones());
+////        costo.setViaticos(costoDTO.getViaticos());
+////        }catch(Exception e){
+////            e.printStackTrace();
+////            proceso.setResultado(false);
+////            proceso.setMensaje("Error al guaradar costos");
+////        }
+//    }
 }
