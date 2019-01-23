@@ -5,6 +5,17 @@
  */
 package transporte;
 
+import com.sgcv.bean.EmpleadosBean;
+import com.sgcv.bean.ServiciosBean;
+import com.sgcv.dto.ClienteDTO;
+import com.sgcv.dto.EstadosDTO;
+import com.sgcv.dto.MunicipiosDTO;
+import com.sgcv.dto.PersonaDTO;
+import com.sgcv.dto.RespuestaEstadosDTO;
+import com.sgcv.dto.ServiciosDTO;
+import java.math.BigInteger;
+import java.util.Collections;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,6 +29,8 @@ public class servicios_nuevos extends javax.swing.JFrame {
      */
     public servicios_nuevos() {
         initComponents();
+        llenarEstados();
+        foliotx.setText(generaFolio());
     }
 
     /**
@@ -45,7 +58,7 @@ public class servicios_nuevos extends javax.swing.JFrame {
         fecha_realizacion = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
+        foliotx = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
@@ -135,9 +148,9 @@ public class servicios_nuevos extends javax.swing.JFrame {
         jLabel33.setText("CIUDAD DESTINO:");
         jLabel33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("FOLIO");
-        jLabel34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        foliotx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        foliotx.setText("FOLIO");
+        foliotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("TIPO CAMION:");
@@ -289,7 +302,7 @@ public class servicios_nuevos extends javax.swing.JFrame {
                         .addGap(133, 133, 133)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(112, 112, 112)
-                        .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(foliotx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -374,7 +387,7 @@ public class servicios_nuevos extends javax.swing.JFrame {
                                 .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
-                                .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(foliotx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(48, 48, 48)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -466,6 +479,33 @@ public class servicios_nuevos extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"ISR por cobrar");
         }else if(servicio.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Total del servicio");
+        }else{
+            ClienteDTO cliente= new ClienteDTO();
+            PersonaDTO persona= new PersonaDTO();
+            persona.setNombre(nombre.getText());
+            persona.setRfc(rfc.getText());
+            persona.setTelefono1(telefono.getText());
+            cliente.setPersona(persona);
+            ServiciosDTO servicio= new ServiciosDTO();
+            servicio.setCiudadDestino(destino.getSelectedItem().toString());
+            servicio.setCiudadOrigen(origen.getSelectedItem().toString());
+            servicio.setFechaRealizacion(new Date());
+            servicio.setFechaSolicitud(new Date());
+//            servicio.setFolio(folio);
+//            servicio.setIdCliente(idCliente);
+//            servicio.setIdServicio();
+            servicio.setIdCliente(cliente);
+            servicio.setIsr(Integer.parseInt(isr.getText()));
+            servicio.setIva(Integer.parseInt(iva.getText()));
+            servicio.setPlacasCamion(placas.getText());
+            servicio.setSubTotal(Integer.parseInt(subtotal.getText()));
+            servicio.setTipoCamion(camion.getSelectedItem().toString());
+            servicio.setTipoCarga(carga.getSelectedItem().toString());
+            servicio.setTotalCobrado(Integer.parseInt(this.servicio.getText()));
+            ServiciosBean gestor = new ServiciosBean();
+            gestor.guardarServicio(servicio);
+//            servicio.setUtilidadNeta();
+                    
         }
     }//GEN-LAST:event_btn_guardarActionPerformed
 
@@ -485,9 +525,40 @@ public class servicios_nuevos extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    public void llenarEstados(){
+       EmpleadosBean empleados= new EmpleadosBean();
+       RespuestaEstadosDTO estados=empleados.getEstados();
+       for(EstadosDTO estado: estados.getEstados()){
+           origen.addItem(estado.getEstado());
+           destino.addItem(estado.getEstado());
+       }
+   }
+   
+//   public void llenarMunicipios(){
+//       EmpleadosBean empleados= new EmpleadosBean();
+//       EstadosDTO estadosDTO= new EstadosDTO();
+//       estadosDTO.setEstado(entidad.getSelectedItem().toString());
+//       RespuestaEstadosDTO estados=empleados.getMunicipios(estadosDTO);
+//        Collections.sort(estados.getEstados().get(0).getMunicipios());
+////         Collections.sort(list);
+//       for(MunicipiosDTO municipioDTO: estados.getEstados().get(0).getMunicipios()){
+//           municipio.addItem(municipioDTO.getMunicipio());
+//       }
+//   }
     /**
      * @param args the command line arguments
      */
+    
+    public String generaFolio(){
+        String folio="";
+        for(int x=0;x<10;x++){
+            int numero = (int) (Math.random() * 9) + 1;
+            folio=folio+numero;
+        }
+        return folio;
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -534,6 +605,7 @@ public class servicios_nuevos extends javax.swing.JFrame {
     private javax.swing.JTextField empresa;
     private javax.swing.JTextField fecha_actual;
     private javax.swing.JTextField fecha_realizacion;
+    private javax.swing.JLabel foliotx;
     private javax.swing.JTextField hora_actual;
     private javax.swing.JTextField hora_realizacion;
     private javax.swing.JTextField isr;
@@ -548,7 +620,6 @@ public class servicios_nuevos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;

@@ -84,7 +84,7 @@
                       <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" pref="191" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-                      <Component id="jLabel34" max="32767" attributes="0"/>
+                      <Component id="foliotx" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -196,7 +196,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                              <Component id="jLabel34" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="foliotx" min="-2" pref="25" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
@@ -445,7 +445,7 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel34">
+    <Component class="javax.swing.JLabel" name="foliotx">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="FOLIO"/>

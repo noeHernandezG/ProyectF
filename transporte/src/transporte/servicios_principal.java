@@ -5,6 +5,9 @@
  */
 package transporte;
 
+import com.sgcv.bean.ServiciosBean;
+import com.sgcv.dto.RespuestaServiciosDTO;
+
 /**
  *
  * @author FERRUZ
@@ -16,6 +19,7 @@ public class servicios_principal extends javax.swing.JFrame {
      */
     public servicios_principal() {
         initComponents();
+        buscarServicios();
     }
 
     /**
@@ -28,8 +32,6 @@ public class servicios_principal extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton7 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         btn_eliminar = new javax.swing.JButton();
         btn_NS = new javax.swing.JButton();
         btn_ver = new javax.swing.JButton();
@@ -40,6 +42,8 @@ public class servicios_principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btn_inicio = new javax.swing.JButton();
         btn_regresar = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jButton7.setText("SALIR");
         jButton7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -50,13 +54,6 @@ public class servicios_principal extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "LISTA SERVICIOS REALIZADOS", "Servicio 1", "Servicio 2", "Servicio 3", "Servicio 4", "Servicio 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
 
         btn_eliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btn_eliminar.setText("ELIMINAR");
@@ -120,6 +117,19 @@ public class servicios_principal extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,7 +138,7 @@ public class servicios_principal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                 .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(117, 117, 117))
             .addGroup(layout.createSequentialGroup()
@@ -141,10 +151,6 @@ public class servicios_principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 83, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(btn_NS, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -153,6 +159,11 @@ public class servicios_principal extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(btn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(189, 189, 189))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(57, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(58, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,9 +175,7 @@ public class servicios_principal extends javax.swing.JFrame {
                 .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_NS, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(218, 218, 218)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ver, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -176,6 +185,11 @@ public class servicios_principal extends javax.swing.JFrame {
                     .addComponent(btn_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(159, Short.MAX_VALUE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(176, Short.MAX_VALUE)))
         );
 
         pack();
@@ -213,6 +227,22 @@ public class servicios_principal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_inicioActionPerformed
 
+    public void buscarServicios(){
+        ServiciosBean bean = new ServiciosBean();
+       RespuestaServiciosDTO respuesta= bean.buscarServicios();
+       DefaultTableModel model= new DefaultTableModel();
+        model.addColumn("RFC");
+        model.addColumn("Nombre");
+        model.addColumn("");
+        tablaClientes.setModel(model);
+        tablaClientes.getColumnModel().getColumn(2).setMinWidth(0);
+        tablaClientes.getTableHeader().getColumnModel().getColumn(2).setMaxWidth(0);
+       for(ClienteDTO cliente:respuesta.getClientes()){
+           model.addRow(new Object[]{cliente.getPersona().getRfc(),
+                cliente.getPersona().getNombre(),
+                cliente.getIdCliente()});
+       }
+    }
     /**
      * @param args the command line arguments
      */
@@ -261,9 +291,9 @@ public class servicios_principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
