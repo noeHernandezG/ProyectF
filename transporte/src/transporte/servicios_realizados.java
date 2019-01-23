@@ -5,6 +5,10 @@
  */
 package transporte;
 
+import com.sgcv.bean.ServiciosBean;
+import com.sgcv.dto.RespuestaServiciosDTO;
+import com.sgcv.dto.ServiciosDTO;
+
 /**
  *
  * @author FERRUZ
@@ -14,10 +18,18 @@ public class servicios_realizados extends javax.swing.JFrame {
     /**
      * Creates new form clientes_nuevos1
      */
+    ServiciosDTO servicio;
     public servicios_realizados() {
         initComponents();
     }
 
+    public servicios_realizados(ServiciosDTO servicio) {
+        this.servicio = servicio;
+        initComponents();
+        buscarServicio();
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,7 +48,7 @@ public class servicios_realizados extends javax.swing.JFrame {
         fecharealizaciontx = new javax.swing.JLabel();
         origentx = new javax.swing.JLabel();
         destinotx = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
+        foliotx = new javax.swing.JLabel();
         camiontx = new javax.swing.JLabel();
         cargatx = new javax.swing.JLabel();
         subtotaltx = new javax.swing.JLabel();
@@ -99,9 +111,9 @@ public class servicios_realizados extends javax.swing.JFrame {
         destinotx.setText("CIUDAD DESTINO");
         destinotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel34.setText("FOLIO");
-        jLabel34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        foliotx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        foliotx.setText("FOLIO");
+        foliotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         camiontx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         camiontx.setText("TIPO CAMION");
@@ -267,7 +279,7 @@ public class servicios_realizados extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(empresatx, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(10, 10, 10)
-                        .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(foliotx, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
                 .addGap(113, 113, 113)
@@ -286,7 +298,7 @@ public class servicios_realizados extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(foliotx, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -367,6 +379,29 @@ public class servicios_realizados extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_verActionPerformed
 
+    public void buscarServicio(){
+        ServiciosBean bean = new ServiciosBean();
+        RespuestaServiciosDTO respuesta = bean.buscarServicio(servicio);
+        servicio = respuesta.getServicios().get(0);
+        foliotx.setText(servicio.getFolio());
+        empresatx.setText(servicio.getIdCliente().getPersona().getNombre());
+        nombretx.setText(servicio.getIdCliente().getPersona().getNombre());
+        rfctx.setText(servicio.getIdCliente().getPersona().getRfc());
+        telefonotx.setText(servicio.getIdCliente().getPersona().getTelefono1());
+        fechaactualtx.setText(servicio.getFechaRealizacion());
+        fecharealizaciontx.setText(servicio.getFechaRealizacion());
+        horaactualtx.setText("");
+        horarealizaciontx.setText("");
+        camiontx.setText(servicio.getTipoCamion());
+        placastx.setText(servicio.getPlacasCamion());
+        cargatx.setText(servicio.getTipoCarga());
+        origentx.setText(servicio.getCiudadOrigen());
+        destinotx.setText(servicio.getCiudadDestino());
+        subtotaltx.setText(servicio.getSubTotal().toString());
+        ivatx.setText(servicio.getIva().toString());
+        isrtx.setText(servicio.getIsr().toString());
+        serviciotx.setText(servicio.getTotalCobrado().toString());
+    }
     /**
      * @param args the command line arguments
      */
@@ -421,13 +456,13 @@ public class servicios_realizados extends javax.swing.JFrame {
     private javax.swing.JLabel empresatx;
     private javax.swing.JLabel fechaactualtx;
     private javax.swing.JLabel fecharealizaciontx;
+    private javax.swing.JLabel foliotx;
     private javax.swing.JLabel horaactualtx;
     private javax.swing.JLabel horarealizaciontx;
     private javax.swing.JLabel isrtx;
     private javax.swing.JLabel ivatx;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextPane jTextPane1;
