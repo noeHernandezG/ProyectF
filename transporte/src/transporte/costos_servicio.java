@@ -128,7 +128,7 @@ public class costos_servicio extends javax.swing.JFrame {
         });
 
         cobradotx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cobradotx.setText("TOTAL COBRADO POR SERVICIO");
+        cobradotx.setText("9500");
         cobradotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -168,6 +168,7 @@ public class costos_servicio extends javax.swing.JFrame {
         });
 
         rendimientotx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        rendimientotx.setText("8.33");
         rendimientotx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -207,11 +208,11 @@ public class costos_servicio extends javax.swing.JFrame {
         otrostx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         gastostx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gastostx.setText("TOTAL GASTOS");
+        gastostx.setText("5000");
         gastostx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         utilidadtx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        utilidadtx.setText("UTILIDAD NETA");
+        utilidadtx.setText("4500");
         utilidadtx.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel36.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -395,6 +396,9 @@ public class costos_servicio extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Ingrese la suma de las refacciones");
         } else if(otrostx.getText().equals("")){
             JOptionPane.showMessageDialog(this,"Ingrese la suma de otros gastos");
+        }else{
+            JOptionPane.showMessageDialog(this,"Se guardaron los costos correctamente");
+        
         }
     }//GEN-LAST:event_btn_guardarActionPerformed
 
@@ -425,19 +429,19 @@ public class costos_servicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         int in=Integer.parseInt(kiloiniciotx.getText());
         int fin=Integer.parseInt(kilofinaltx.getText());
-        kilorecotx.setText(""+(in+fin));
+        kilorecotx.setText(""+(fin-in));
     }//GEN-LAST:event_kilofinaltxKeyReleased
 
     private void gasolinatxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gasolinatxKeyReleased
         // TODO add your handling code here:
         int kr=Integer.parseInt(kilorecotx.getText());
         int gg=Integer.parseInt(gasolinatx.getText());
-        rendimientotx.setText(""+(kr/gg));
+//        rendimientotx.setText(""+(kr/gg));
     }//GEN-LAST:event_gasolinatxKeyReleased
 
     public void llenardatos(){
         foliotx.setText(servicio.getFolio());
-        cobradotx.setText(servicio.getFolio());
+//        cobradotx.setText(servicio.getTotalCobrado().toString());
     }
     /**
      * @param args the command line arguments
